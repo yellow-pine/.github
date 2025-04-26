@@ -1,17 +1,8 @@
-# Yellow Pine 🌲
+# .github Repository
 
-Thoughtful tools for developers, handcrafted with care.
+This repository contains organization-wide GitHub configurations for **Yellow Pine**.
 
-## 🌟 Projects
+## 📄 Contents
 
-- **[zsh-github-dark](https://github.com/yellow-pine/zsh-github-dark)**  
-  Minimal GitHub Dark-optimized zsh and Terminal setup for macOS developers.
-
-## 🌐 Website
-
-Visit [yellowpine.com](https://yellowpine.com) for more information.
-
-## 📫 Contact
-
-For inquiries or collaborations, reach us at:  
-**hello@yellowpine.com**
+- `profile/README.md` — public-facing organization profile, displayed at [https://github.com/yellow-pine](https://github.com/yellow-pine)
+- (Future) Issue templates, PR templates, funding files, GitHub Actions workflows can also live here if needed.
