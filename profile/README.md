@@ -1,4 +1,7 @@
-# Yellow Pine 🌲
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/yellow-pine-logo-dark.png">
+  <img src="assets/yellow-pine-logo.png" alt="Yellow Pine logo with tree icon" width="360">
+</picture>
 
 Thoughtful tools for developers, handcrafted with care.
 
