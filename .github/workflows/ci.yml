@@ -1,0 +1,28 @@
+name: ci
+
+# The org profile README is the company homepage (yellowpine.com redirects here), so its
+# invariants are tested: assets resolve, brand SVGs are real vectors, and — because the
+# tests fetch without credentials — every linked repo is publicly visible and every
+# product link is live. The weekly cron catches links that die between pushes.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: profile invariants
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test

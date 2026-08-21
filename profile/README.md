@@ -1,30 +1,34 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/yellow-pine-logo-dark.png">
-  <img src="assets/yellow-pine-logo.png" alt="Yellow Pine logo with tree icon" width="360">
+  <source media="(prefers-color-scheme: dark)" srcset="../brand/logo-dark.svg">
+  <img src="../brand/logo.svg" alt="Yellow Pine" width="400">
 </picture>
 
-Thoughtful tools for developers, handcrafted with care.
+**Thoughtful tools, handcrafted with care.**
 
-## 🙋‍♂️ About Us
+Yellow Pine is a small product studio. We build focused, carefully made software — products
+that respect your attention, and developer tools that respect your terminal.
 
-At Yellow Pine, we create elegant tools and workflows for developers who value simplicity, clarity, and focus.
+## 🌲 Products
 
-## 🌟 Projects
+- **[Latch](https://latch.fyi)** — Grip-test your repo for AI coding agents. A readiness
+  readout on any public GitHub repo: a score per signal, plus the fixes that raise it.
+- **[kishi](https://kishi.fyi)** — A warm, research-backed dating-readiness kit, made from
+  you — your colors, your city, your people: real store links, ten looks, a photo plan.
+- **[Bly](https://bly.fyi)** — A career agent that runs your job search from your own
+  inbox, on your own Claude subscription.
 
-- **[zsh-github-dark](https://github.com/yellow-pine/zsh-github-dark)**  
-  Minimal GitHub Dark-optimized zsh and Terminal setup for macOS developers.
+## 🛠️ Open source
 
-## 👩‍💻 Contribution
+- **[zsh-github-dark](https://github.com/yellow-pine/zsh-github-dark)** — A minimalist zsh
+  and macOS Terminal setup with GitHub Dark colors, a git-aware prompt, and a one-line
+  installer.
 
-We welcome feedback, ideas, and contributions.  
-Please open issues or discussions in relevant repositories to get involved.
+## 📫 Get in touch
 
-## 📚 Useful Resources
+Feedback, ideas, and contributions are welcome — open an issue or discussion in the
+relevant repository, or write to **hello@yellowpine.com**.
 
-- [Website](https://yellowpine.com)
-- [GitHub Organization](https://github.com/yellow-pine)
+---
 
-## 📫 Contact
-
-For inquiries or collaborations, reach us at:  
-**hello@yellowpine.com**
+<img src="../brand/mark.svg" alt="" width="22" align="left"> Built with 💛 by
+[Yellow Pine](https://github.com/yellow-pine) · yellowpine.com points here.
