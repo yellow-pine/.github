@@ -4,6 +4,6 @@
   "description": "Org-wide GitHub configuration + the public Yellow Pine profile (the company homepage).",
   "type": "module",
   "scripts": {
-    "test": "node --test tests/"
+    "test": "node --test tests/profile.test.mjs"
   }
 }
