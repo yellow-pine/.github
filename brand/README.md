@@ -40,9 +40,12 @@ muddies into a triangle.
 
 ## Provenance
 
+**This folder is the source of truth for the Yellow Pine identity.** The **Yellow Pine
+Brand** Figma file (key `hbz4zqAZwSskQiFn5PPxFE`, org access) mirrors these masters for
+design work — change the identity here first, then refresh the mirrors.
+
 v2 (2026-08): mark redesigned in-house — a two-tier pine synthesizing the original
 Brandmark mark's rounded geometry and tilt with an unmistakable pine silhouette; wordmark
 letterforms unchanged (outlined, no font dependency). The v1 Brandmark-generated identity
 is archived in the private `yellow-pine/brand-assets` repository and in this repo's git
-history. Working design library: the **Yellow Pine Brand** Figma file (key
-`hbz4zqAZwSskQiFn5PPxFE`, org access).
+history.
