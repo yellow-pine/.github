@@ -1,6 +1,6 @@
 # Yellow Pine Brand
 
-The canonical public brand library. These SVG masters are hand-cleaned outlined vectors
+The canonical public brand library. These SVG masters are clean outlined vectors
 (no font dependency, tight viewBoxes, no metadata cruft) — use them as-is.
 
 ## Files

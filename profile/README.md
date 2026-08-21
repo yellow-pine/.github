@@ -3,10 +3,11 @@
   <img src="../brand/logo.svg" alt="Yellow Pine" width="400">
 </picture>
 
-**Thoughtful tools, handcrafted with care.**
+**Thoughtful tools, built with care.**
 
-Yellow Pine is a small product studio. We build focused, carefully made software — products
-that respect your attention, and developer tools that respect your terminal.
+Yellow Pine is a small product studio: a tiny human team and a fleet of AI agents, building
+focused software — products that respect your attention, and developer tools that respect
+your terminal.
 
 ## 🌲 Products
 
