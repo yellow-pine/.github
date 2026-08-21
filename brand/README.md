@@ -1,18 +1,21 @@
 # Yellow Pine Brand
 
-The canonical public brand library. These SVG masters are clean outlined vectors
-(no font dependency, tight viewBoxes, no metadata cruft) — use them as-is.
+The canonical public brand library — **identity v2** (August 2026 modernization). Clean
+outlined vectors with tight viewBoxes and no metadata cruft — use them as-is.
+
+The mark is a two-tier pine with a 4° lean: a tree that's on its way somewhere. At small
+sizes it simplifies to a single tier with a sturdier trunk (`favicon.svg`) so it never
+muddies into a triangle.
 
 ## Files
 
 | File | What it is | Use on |
 |---|---|---|
-| [`logo.svg`](logo.svg) | Horizontal lockup — *Yellow ▶ Pine*, `#202020` wordmark | Light backgrounds |
+| [`logo.svg`](logo.svg) | Horizontal lockup — *Yellow 🌲 Pine*, `#202020` wordmark | Light backgrounds |
 | [`logo-dark.svg`](logo-dark.svg) | Same lockup, `#FCFCFC` wordmark | Dark backgrounds |
-| [`icon.svg`](icon.svg) | The mark on a rounded `#202020` tile | Avatars, app icons, favicons |
+| [`icon.svg`](icon.svg) | The mark on a rounded `#202020` tile | Avatars, app icons ≥ 48 px |
+| [`favicon.svg`](favicon.svg) | Small-size cut (single tier, sturdy trunk) on the same tile | Favicons, anything < 48 px |
 | [`mark.svg`](mark.svg) | The bare `#FFD100` mark on transparency | Surfaces that bring their own background |
-
-The mark is a pine tipped sideways — read it as a cursor in flight.
 
 ## Palette
 
@@ -26,16 +29,20 @@ The mark is a pine tipped sideways — read it as a cursor in flight.
 
 ## Usage
 
-- Minimum sizes: 100&nbsp;px wide digital, 32&nbsp;px favicon (use `icon.svg` at small sizes —
-  the lockup does not survive them).
+- Below 48 px, always use `favicon.svg`'s single-tier cut — the tier notches of the full
+  mark are what muddies first.
+- The lockup keeps the mark **between** the words — that placement is the signature; don't
+  move it in front.
 - Clear space: keep space equal to the wordmark's x-height on all sides.
-- Never stretch, skew, rotate, add effects, or recolor outside these variants.
+- Never stretch, skew, add effects, change the lean, or recolor outside these variants.
 - Meet WCAG AA contrast (4.5:1): pair `logo.svg` with light and `logo-dark.svg` with dark
   backgrounds.
 
 ## Provenance
 
-The identity was generated with Brandmark (outlined vectors), then hand-cleaned. The working
-design library is the **Yellow Pine Brand** Figma file (key `hbz4zqAZwSskQiFn5PPxFE`,
-org access); the full export archive and the raster/favicon generators live in the private
-`yellow-pine/brand-assets` repository.
+v2 (2026-08): mark redesigned in-house — a two-tier pine synthesizing the original
+Brandmark mark's rounded geometry and tilt with an unmistakable pine silhouette; wordmark
+letterforms unchanged (outlined, no font dependency). The v1 Brandmark-generated identity
+is archived in the private `yellow-pine/brand-assets` repository and in this repo's git
+history. Working design library: the **Yellow Pine Brand** Figma file (key
+`hbz4zqAZwSskQiFn5PPxFE`, org access).
