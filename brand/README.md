@@ -40,9 +40,11 @@ muddies into a triangle.
 
 ## Provenance
 
-**This folder is the source of truth for the Yellow Pine identity.** The **Yellow Pine
-Brand** Figma file (key `hbz4zqAZwSskQiFn5PPxFE`, org access) mirrors these masters for
-design work — change the identity here first, then refresh the mirrors.
+**This folder is the source of truth for the Yellow Pine identity.** Design work happens
+in the **Yellow Pine Brand** project on [Claude Design](https://claude.ai/design)
+(project `e1932f3e-7810-4729-a638-09fecad7d7ab`) — change the identity here first, then
+refresh that project's boards. The old Figma file (key `hbz4zqAZwSskQiFn5PPxFE`) is
+retired; its content moved into the Design project.
 
 v2 (2026-08): mark redesigned in-house — a two-tier pine synthesizing the original
 Brandmark mark's rounded geometry and tilt with an unmistakable pine silhouette; wordmark
