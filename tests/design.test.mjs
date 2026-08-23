@@ -101,6 +101,13 @@ test('every card opens with a @dsCard marker on line one', () => {
   }
 });
 
+test('cards use the brand face for their labels', () => {
+  for (const f of readdirSync(CARDS).filter((f) => f.endsWith('.html'))) {
+    const card = read(join(CARDS, f));
+    assert.ok(card.includes('family=Kanit'), `cards/${f}: brand materials label in Kanit`);
+  }
+});
+
 // --- pointers: every surface names its relations -----------------------------------
 
 test('brand/README names the Design project and the pipeline', () => {

@@ -77,14 +77,15 @@ const tab = (title, active) =>
   `<div style="display: flex; align-items: center; gap: 8px; background: ${active ? '#2d2d30' : 'transparent'}; border-radius: 8px 8px 0 0; padding: 8px 14px; font-size: 11.5px; color: ${active ? '#FCFCFC' : '#9a9a98'}; white-space: nowrap">${icon(16)}<span>${title}</span></div>`;
 
 // Self-contained design-system card: first-line @dsCard marker feeds the Design System
-// pane; no external references at all (system fonts only).
+// pane; only external reference is Google Fonts (Kanit — the brand face).
 const dsCard = (group, title, note, stage, bg) => `<!-- @dsCard group="${group}" -->
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>${title}</title>
-  <style>body { margin: 0; font-family: system-ui, sans-serif; background: ${bg}; color: ${bg === '#202020' ? '#FCFCFC' : '#202020'}; }</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600&display=swap">
+  <style>body { margin: 0; font-family: "Kanit", system-ui, sans-serif; background: ${bg}; color: ${bg === '#202020' ? '#FCFCFC' : '#202020'}; }</style>
 </head>
 <body>
 <div style="display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; padding: 32px; min-height: 200px">
@@ -196,6 +197,12 @@ ${FOOT}`);
     <h2>The face</h2>
     <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The wordmark is set in <strong>Kanit SemiBold</strong> (outlined — no font dependency), identified by metric forensics against twenty candidates: every letter gap fits Kanit&#39;s native kerning plus one constant +0.135em of tracking. Two deliberate customizations: a 22% wider, flat-apex <strong>w</strong> and a rounder i-dot. The tight &#39;Ye&#39; pair is the face&#39;s own kern — kept as a signature. Use Kanit for headings in brand materials; body copy stays system.</p>
     <div style="font-family: Kanit, sans-serif; font-weight: 600; font-size: 30px; letter-spacing: 0.135em">AaBbCcDdEe 0123456789</div>
+    <div style="display: flex; flex-direction: column; gap: 10px; background: #ffffff; border: 1px solid rgba(32,32,32,0.08); border-radius: 14px; padding: 22px">
+      <div style="font-size: 11px; color: #6a6a68; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Proof — outlines vs the live face</div>
+      ${logo(560)}
+      <div style="font-family: Kanit, sans-serif; font-weight: 600; font-size: 47px; letter-spacing: 0.135em; line-height: 1; color: #202020">Yellow&#8195;Pine</div>
+      <div style="font-size: 11px; color: #6a6a68">Top: the outlined lockup. Bottom: live Kanit SemiBold from Google Fonts at the same tracking — the wider flat-apex w and rounder i-dot are the lockup&#39;s two custom glyphs.</div>
+    </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Color contracts</h2>
@@ -252,7 +259,7 @@ ${FOOT}`);
   card('mark.html', dsCard('Brand', 'Mark', `Two-tier pine, 4° lean. Master: brand/mark.svg in ${SOT}`, mark(140), '#FCFCFC'));
   card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
   card('type.html', dsCard('Brand', 'Type — Kanit', `Wordmark: Kanit SemiBold, outlined, custom w + i-dot. Headings: Kanit. Body: system.`,
-    `<div style="font-family: Kanit, system-ui, sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.1em">Yellow Pine</div><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap">`, '#FCFCFC'));
+    `<div style="font-family: Kanit, system-ui, sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.1em">Yellow Pine</div>`, '#FCFCFC'));
   card('colors.html', dsCard('Brand', 'Palette', `#FFD100 Cyber Yellow · #202020 Eerie Black · #FCFCFC Baby Powder · #3C91E6 Bleu De France (dark bg / accents) · #1a75c8 Link on Light · #333533 Jet (elevated dark surface)`,
     `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8', '#333533'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
 }
