@@ -51,8 +51,8 @@ headings in brand materials; body copy stays system.
 ## Provenance
 
 **This folder is the source of truth for the Yellow Pine identity.** Design work happens
-in the **Yellow Pine Brand** project on [Claude Design](https://claude.ai/design)
-(project `e1932f3e-7810-4729-a638-09fecad7d7ab`) — change the identity here first, then
+in the **Yellow Pine Brand** project on Claude Design (claude.ai/design, org access,
+project `e1932f3e-7810-4729-a638-09fecad7d7ab`) — change the identity here first, then
 rebuild and refresh the mirrors. The boards, design-system cards, and the pipeline that
 generates them from these masters live in [`design/`](design/) (see its README for the
 refresh loop and the Figma decision).
