@@ -18,14 +18,18 @@ legible at 16 px, so there is no separate favicon variant to maintain.
 
 ## Palette
 
-| Role | Name | Hex |
-|---|---|---|
-| Brand yellow — the mark | Cyber Yellow | `#FFD100` |
-| Foreground / primary text | Eerie Black | `#202020` |
-| Background / surfaces | Baby Powder | `#FCFCFC` |
-| Links on dark · large text · accents | Bleu De France | `#3C91E6` |
-| Link text on light (AA, derived from Bleu De France) | Link on Light | `#1a75c8` |
-| Elevated dark surface | Jet | `#333533` |
+Four hues. The proper names are the conventional names of the nearest classic colors,
+inherited from the original brand setup; derived steps are shades of their parent hue,
+not additional colors.
+
+| Group | Token | Hex | Classic name |
+|---|---|---|---|
+| Identity | the mark, badges, selection wash | `#FFD100` | Cyber Yellow |
+| Neutral | ink / dark tile | `#202020` | Eerie Black |
+| Neutral | paper | `#FCFCFC` | Baby Powder |
+| Neutral | elevated dark surface | `#333533` | Jet |
+| Interactive | accent · links on dark · large text | `#3C91E6` | Bleu de France |
+| Interactive | link on light (derived dark step, AA) | `#1a75c8` | — |
 
 Contrast contracts are computed, not eyeballed — the full matrix lives on the Foundations
 board in [`design/`](design/). The palette was selected twice over seven complete candidate

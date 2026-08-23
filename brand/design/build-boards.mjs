@@ -140,13 +140,14 @@ ${FOOT}`);
   </div>
   <div style="display: flex; flex-direction: column; gap: 18px">
     <h2>Color</h2>
+    <p style="font-size: 12px; color: #6a6a68; margin: 0; max-width: 66ch">Four hues, not six colors: one identity yellow, three neutrals, one interactive blue whose contextual steps (#1a75c8 links on light, #82BCF2 links on dark) are derived, not separate colors. The proper names are the conventional names of the nearest classic colors, inherited from the original brand setup.</p>
     <div style="display: flex; gap: 16px">
-      ${swatch('#FFD100', 'Cyber Yellow', 'the mark')}
-      ${swatch('#202020', 'Eerie Black', 'foreground')}
-      ${swatch('#FCFCFC', 'Baby Powder', 'background')}
-      ${swatch('#3C91E6', 'Bleu De France', 'links on dark · accents')}
-      ${swatch('#1a75c8', 'Link on Light', 'link text on light · AA')}
-      ${swatch('#333533', 'Jet', 'elevated dark surface')}
+      ${swatch('#FFD100', 'Cyber Yellow', 'identity — the mark')}
+      ${swatch('#202020', 'Eerie Black', 'neutral — ink / tile')}
+      ${swatch('#FCFCFC', 'Baby Powder', 'neutral — paper')}
+      ${swatch('#333533', 'Jet', 'neutral — elevated dark')}
+      ${swatch('#3C91E6', 'Bleu de France', 'interactive — accent')}
+      ${swatch('#1a75c8', 'Bleu de France · dark step', 'link on light · AA')}
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
@@ -278,7 +279,7 @@ ${FOOT}`);
   card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
   card('type.html', dsCard('Brand', 'Type — Rubik', `Wordmark: Rubik 700, outlined, +0.02em tracking. Headings: Rubik. Body: system. Product UIs: JetBrains Mono (their own voice).`,
     `<div style="font-family: Rubik, system-ui, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.02em">Yellow Pine</div>`, '#FCFCFC'));
-  card('colors.html', dsCard('Brand', 'Palette', `#FFD100 Cyber Yellow · #202020 Eerie Black · #FCFCFC Baby Powder · #3C91E6 Bleu De France (dark bg / accents) · #1a75c8 Link on Light · #333533 Jet (elevated dark surface)`,
+  card('colors.html', dsCard('Brand', 'Palette — four hues', `Identity: #FFD100 Cyber Yellow. Neutrals: #202020 Eerie Black (ink), #FCFCFC Baby Powder (paper), #333533 Jet (elevated dark). Interactive: #3C91E6 Bleu de France, with derived link steps #1a75c8 (light) / #82BCF2 (dark).`,
     `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8', '#333533'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
 }
 
