@@ -17,8 +17,8 @@ const opentype = require('opentype.js');
 const DESIGN = dirname(fileURLToPath(import.meta.url));
 const BRAND = join(DESIGN, '..');
 
-const CAP = 198, BASELINE = 311, MARK_H = 384, TRACK_EM = 0.09;
-const GAP_LEFT = 150, GAP_RIGHT = 184; // word→mark bearings: tighter after Yellow (mark mass leans right)
+const CAP = 198, BASELINE = 311, MARK_H = 384, TRACK_EM = 0.02;
+const GAP_LEFT = 122, GAP_RIGHT = 146; // word→mark bearings: tighter after Yellow (mark mass leans right)
 const MARGIN = 5;
 
 const buf = readFileSync(join(DESIGN, 'fonts', 'rubik-700.ttf'));

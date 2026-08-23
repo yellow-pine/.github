@@ -196,12 +196,12 @@ ${FOOT}`);
   ${eyebrow('Foundations · type & color pass · August 2026')}
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>The face</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The brand face is <strong>Rubik 700</strong> — chosen by a three-lens panel (personality, mark harmony, production) over fourteen candidate faces and the incumbent: its rounded stems and terminals share the pine&#39;s corner language, warm enough for kishi, credible enough for Latch, a living 300–900 variable family for headings. The wordmark is set in Rubik 700 at +0.09em tracking and shipped as outlines (no font dependency); the generator and vendored OFL font live in brand/design/. Product UIs keep their own voices (kishi and Latch run JetBrains Mono as UI identity — deliberately divergent from the umbrella brand).</p>
-    <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.09em">AaBbCcDdEe 0123456789</div>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The brand face is <strong>Rubik 700</strong> — chosen by a three-lens panel (personality, mark harmony, production) over fourteen candidate faces and the incumbent: its rounded stems and terminals share the pine&#39;s corner language, warm enough for kishi, credible enough for Latch, a living 300–900 variable family for headings. The wordmark is set in Rubik 700 at +0.02em tracking and shipped as outlines (no font dependency); the generator and vendored OFL font live in brand/design/. Product UIs keep their own voices (kishi and Latch run JetBrains Mono as UI identity — deliberately divergent from the umbrella brand).</p>
+    <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.02em">AaBbCcDdEe 0123456789</div>
     <div style="display: flex; flex-direction: column; gap: 10px; background: #ffffff; border: 1px solid rgba(32,32,32,0.08); border-radius: 14px; padding: 22px">
       <div style="font-size: 11px; color: #6a6a68; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Proof — outlines vs the live face</div>
       ${logo(560)}
-      <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 47px; letter-spacing: 0.09em; line-height: 1; color: #202020">Yellow&#8195;Pine</div>
+      <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 47px; letter-spacing: 0.02em; line-height: 1; color: #202020">Yellow&#8195;Pine</div>
       <div style="font-size: 11px; color: #6a6a68">Top: the outlined lockup masters. Bottom: live Rubik 700 from Google Fonts at the same tracking — same face, byte-reproducible via brand/design/gen-wordmark.mjs.</div>
     </div>
   </div>
@@ -276,8 +276,8 @@ ${FOOT}`);
   card('logo-dark.html', dsCard('Brand', 'Logo — dark backgrounds', `Master: brand/logo-dark.svg in ${SOT}`, logoDark(560), '#202020'));
   card('mark.html', dsCard('Brand', 'Mark', `Two-tier pine, 4° lean. Master: brand/mark.svg in ${SOT}`, mark(140), '#FCFCFC'));
   card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
-  card('type.html', dsCard('Brand', 'Type — Rubik', `Wordmark: Rubik 700, outlined, +0.09em tracking. Headings: Rubik. Body: system. Product UIs: JetBrains Mono (their own voice).`,
-    `<div style="font-family: Rubik, system-ui, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.09em">Yellow Pine</div>`, '#FCFCFC'));
+  card('type.html', dsCard('Brand', 'Type — Rubik', `Wordmark: Rubik 700, outlined, +0.02em tracking. Headings: Rubik. Body: system. Product UIs: JetBrains Mono (their own voice).`,
+    `<div style="font-family: Rubik, system-ui, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.02em">Yellow Pine</div>`, '#FCFCFC'));
   card('colors.html', dsCard('Brand', 'Palette', `#FFD100 Cyber Yellow · #202020 Eerie Black · #FCFCFC Baby Powder · #3C91E6 Bleu De France (dark bg / accents) · #1a75c8 Link on Light · #333533 Jet (elevated dark surface)`,
     `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8', '#333533'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
 }
