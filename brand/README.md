@@ -28,9 +28,10 @@ legible at 16 px, so there is no separate favicon variant to maintain.
 | Elevated dark surface | Jet | `#333533` |
 
 Contrast contracts are computed, not eyeballed — the full matrix lives on the Foundations
-board in [`design/`](design/). The palette was confirmed (2026-08-23) by a three-lens,
-skills-armed selection over seven complete candidate systems, all validator-gated; the
-incumbent won on argued merit. Role guardrails from that verdict:
+board in [`design/`](design/). The palette was selected twice over seven complete candidate
+systems (all validator-gated): a skills-armed panel, then a **blind** rerun with codenamed
+systems and no incumbent framing — the same system won both (2/3 each). Role guardrails
+from those verdicts:
 
 - **`#FFD100` is identity only** — the mark and badges. Never a chart series (use a darker
   gold step) and never a status color; a future status-amber must step clearly away from it.
@@ -38,6 +39,25 @@ incumbent won on argued merit. Role guardrails from that verdict:
   identity. On light backgrounds it is always the `#1a75c8` token.
 - Cyber Yellow on light backgrounds is the logo only (WCAG logo exemption, 1.4:1) — never
   functional icons, text, or UI.
+
+### Extended tokens (blind-selection verdict, all AA-verified)
+
+| Group | Tokens |
+|---|---|
+| Surfaces · light | paper `#FCFCFC` · card `#FFFFFF` (hairline `#E7E7E5`) · sunken `#F4F4F2` |
+| Surfaces · dark | bg `#161616` · surface `#202020` · raised `#2A2A2A` · border `#3A3A3A` |
+| Text · light | `#202020` · secondary `#5A5A58` · tertiary `#6E6E6C` · disabled `#9A9A98` (non-text) |
+| Text · dark | `#F2F2F0` · secondary `#B7B7B4` · tertiary `#8F8F8C` · disabled `#5E5E5C` |
+| Links | light `#1a75c8` (hover `#155F9F`) · dark `#82BCF2` (hover `#9FCCF6`) · fills `#3C91E6` |
+| Selection wash | `#FFF7CC` with ink text (the one sanctioned yellow tint) |
+| Status (icon + label, always) | success `#1A7F4B`/`#3DBE7E` · warning `#B45309`/`#E08A2E` (orange-shifted, never brand yellow) · danger `#C7392F`/`#F2555A` |
+
+- Focus rings are azure in both modes — never yellow (3:1 non-text gate).
+- Charts: `#FFD100` is excluded from categorical slots; slot 1 is the azure family; if a
+  yellow-family slot is needed, use in-band ochre `#C9930A`; validate palettes per mode
+  with the dataviz validator.
+- Info states default to the azure family; a product may substitute neutral where blue
+  must stay exclusively interactive (Latch).
 
 ## Type
 
