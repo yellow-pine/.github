@@ -104,7 +104,7 @@ test('every card opens with a @dsCard marker on line one', () => {
 test('cards use the brand face for their labels', () => {
   for (const f of readdirSync(CARDS).filter((f) => f.endsWith('.html'))) {
     const card = read(join(CARDS, f));
-    assert.ok(card.includes('family=Kanit'), `cards/${f}: brand materials label in Kanit`);
+    assert.ok(card.includes('family=Rubik'), `cards/${f}: brand materials label in Kanit`);
   }
 });
 
@@ -163,7 +163,7 @@ test('Main board palette matches the documented palette', () => {
 test('boards use the identified brand face and the accessible link token', () => {
   for (const f of BOARDS) {
     const board = read(join(CANVAS, f));
-    assert.ok(board.includes('family=Kanit'), `${f}: boards should load Kanit — the identified wordmark face`);
+    assert.ok(board.includes('family=Rubik'), `${f}: boards should load Rubik — the chosen brand face`);
     assert.ok(!/a \{ color: #3C91E6/.test(board), `${f}: links on light must use the AA token #1a75c8, not raw #3C91E6`);
   }
 });

@@ -33,10 +33,15 @@ logo exemption, 1.4:1) — never functional icons, text, or UI.
 
 ## Type
 
-The wordmark is set in **Kanit SemiBold** (outlined — no font dependency), with two
-deliberate customizations: a wider flat-apex `w` and a rounder i-dot, under +0.135em
-tracking; the tight `Ye` pair is Kanit's own kern, kept as a signature. Use Kanit for
-headings in brand materials; body copy stays system.
+The brand face is **Rubik 700** — chosen (2026-08) by a three-lens panel over fourteen
+candidate faces and the incumbent: its rounded stems and terminals share the pine's corner
+language, warm enough for kishi, credible enough for Latch, and a living 300–900 variable
+family for headings. The wordmark is set in Rubik 700 at +0.09em tracking and shipped as
+outlines (no font dependency); regenerate it with
+[`design/gen-wordmark.mjs`](design/gen-wordmark.mjs) (vendored OFL font in
+`design/fonts/`). Use Rubik for headings in brand materials; body copy stays system.
+Product UIs keep their own voices (kishi and Latch run JetBrains Mono as UI identity —
+deliberately divergent from the umbrella brand).
 
 ## Usage
 
@@ -58,10 +63,10 @@ generates them from these masters live in [`design/`](design/) (see its README f
 refresh loop and the Figma decision).
 
 v2 (2026-08): mark redesigned in-house — a two-tier pine synthesizing the original
-Brandmark mark's rounded geometry and tilt with an unmistakable pine silhouette; wordmark
-letterforms unchanged (outlined, no font dependency). v2.1 (2026-08-23): the mark retuned
-(deeper tier step, sturdier trunk) so one geometry serves every size, retiring the
-separate small-size cut; typography and color passes completed — face identified as
-customized Kanit SemiBold, link-on-light token `#1a75c8` added, Jet re-roled. The v1
+Brandmark mark's rounded geometry and tilt with an unmistakable pine silhouette. v2.1
+(2026-08-23): the mark retuned (deeper tier step, sturdier trunk) so one geometry serves
+every size, retiring the separate small-size cut; color pass added the link-on-light
+token `#1a75c8` and re-roled Jet. v2.2 (2026-08-23): wordmark re-typeset in **Rubik 700**
+(panel-chosen brand face), replacing the Brandmark-era customized-Kanit outlines. The v1
 Brandmark-generated identity is archived in the private `yellow-pine/brand-assets`
 repository and in this repo's git history.

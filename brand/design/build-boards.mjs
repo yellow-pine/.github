@@ -41,9 +41,9 @@ const HEAD = `<!doctype html>
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&display=swap">
   <style>
-    body { margin: 0; font-family: "Kanit", "Trebuchet MS", system-ui, sans-serif; color: #202020; }
+    body { margin: 0; font-family: "Rubik", "Trebuchet MS", system-ui, sans-serif; color: #202020; }
     a { color: #1a75c8; } a:hover { color: #155f9f; }
     h2 { font-size: 15px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
     p, li { font-weight: 500; }
@@ -77,15 +77,15 @@ const tab = (title, active) =>
   `<div style="display: flex; align-items: center; gap: 8px; background: ${active ? '#2d2d30' : 'transparent'}; border-radius: 8px 8px 0 0; padding: 8px 14px; font-size: 11.5px; color: ${active ? '#FCFCFC' : '#9a9a98'}; white-space: nowrap">${icon(16)}<span>${title}</span></div>`;
 
 // Self-contained design-system card: first-line @dsCard marker feeds the Design System
-// pane; only external reference is Google Fonts (Kanit — the brand face).
+// pane; only external reference is Google Fonts (Rubik — the brand face).
 const dsCard = (group, title, note, stage, bg) => `<!-- @dsCard group="${group}" -->
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>${title}</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600&display=swap">
-  <style>body { margin: 0; font-family: "Kanit", system-ui, sans-serif; background: ${bg}; color: ${bg === '#202020' ? '#FCFCFC' : '#202020'}; }</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap">
+  <style>body { margin: 0; font-family: "Rubik", system-ui, sans-serif; background: ${bg}; color: ${bg === '#202020' ? '#FCFCFC' : '#202020'}; }</style>
 </head>
 <body>
 <div style="display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; padding: 32px; min-height: 200px">
@@ -122,7 +122,7 @@ ${FOOT}`);
   ${eyebrow('Yellow Pine · Identity v2 · August 2026')}
   <div style="display: flex; flex-direction: column; gap: 10px">
     <div style="font-size: 34px; font-weight: 800; line-height: 1.1; text-wrap: balance">The plane becomes a pine.</div>
-    <p style="font-size: 14px; line-height: 1.55; margin: 0; max-width: 62ch; text-wrap: pretty">A two-tier pine with a 4° lean — keeping the original mark's rounded geometry, Cyber Yellow, and tilt energy, and finally making the name land on sight. Wordmark letterforms unchanged.</p>
+    <p style="font-size: 14px; line-height: 1.55; margin: 0; max-width: 62ch; text-wrap: pretty">A two-tier pine with a 4° lean — keeping the original mark's rounded geometry, Cyber Yellow, and tilt energy, and finally making the name land on sight. Wordmark set in Rubik 700, the brand face.</p>
   </div>
   <div style="padding: 8px 0">${logo(768)}</div>
   <div style="background: #202020; border-radius: 16px; padding: 40px 32px">${logoDark(704)}</div>
@@ -195,13 +195,13 @@ ${FOOT}`);
   ${eyebrow('Foundations · type & color pass · August 2026')}
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>The face</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The wordmark is set in <strong>Kanit SemiBold</strong> (outlined — no font dependency), identified by metric forensics against twenty candidates: every letter gap fits Kanit&#39;s native kerning plus one constant +0.135em of tracking. Two deliberate customizations: a 22% wider, flat-apex <strong>w</strong> and a rounder i-dot. The tight &#39;Ye&#39; pair is the face&#39;s own kern — kept as a signature. Use Kanit for headings in brand materials; body copy stays system.</p>
-    <div style="font-family: Kanit, sans-serif; font-weight: 600; font-size: 30px; letter-spacing: 0.135em">AaBbCcDdEe 0123456789</div>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The brand face is <strong>Rubik 700</strong> — chosen by a three-lens panel (personality, mark harmony, production) over fourteen candidate faces and the incumbent: its rounded stems and terminals share the pine&#39;s corner language, warm enough for kishi, credible enough for Latch, a living 300–900 variable family for headings. The wordmark is set in Rubik 700 at +0.09em tracking and shipped as outlines (no font dependency); the generator and vendored OFL font live in brand/design/. Product UIs keep their own voices (kishi and Latch run JetBrains Mono as UI identity — deliberately divergent from the umbrella brand).</p>
+    <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.09em">AaBbCcDdEe 0123456789</div>
     <div style="display: flex; flex-direction: column; gap: 10px; background: #ffffff; border: 1px solid rgba(32,32,32,0.08); border-radius: 14px; padding: 22px">
       <div style="font-size: 11px; color: #6a6a68; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Proof — outlines vs the live face</div>
       ${logo(560)}
-      <div style="font-family: Kanit, sans-serif; font-weight: 600; font-size: 47px; letter-spacing: 0.135em; line-height: 1; color: #202020">Yellow&#8195;Pine</div>
-      <div style="font-size: 11px; color: #6a6a68">Top: the outlined lockup. Bottom: live Kanit SemiBold from Google Fonts at the same tracking — the wider flat-apex w and rounder i-dot are the lockup&#39;s two custom glyphs.</div>
+      <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 47px; letter-spacing: 0.09em; line-height: 1; color: #202020">Yellow&#8195;Pine</div>
+      <div style="font-size: 11px; color: #6a6a68">Top: the outlined lockup masters. Bottom: live Rubik 700 from Google Fonts at the same tracking — same face, byte-reproducible via brand/design/gen-wordmark.mjs.</div>
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
@@ -258,8 +258,8 @@ ${FOOT}`);
   card('logo-dark.html', dsCard('Brand', 'Logo — dark backgrounds', `Master: brand/logo-dark.svg in ${SOT}`, logoDark(560), '#202020'));
   card('mark.html', dsCard('Brand', 'Mark', `Two-tier pine, 4° lean. Master: brand/mark.svg in ${SOT}`, mark(140), '#FCFCFC'));
   card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
-  card('type.html', dsCard('Brand', 'Type — Kanit', `Wordmark: Kanit SemiBold, outlined, custom w + i-dot. Headings: Kanit. Body: system.`,
-    `<div style="font-family: Kanit, system-ui, sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.1em">Yellow Pine</div>`, '#FCFCFC'));
+  card('type.html', dsCard('Brand', 'Type — Rubik', `Wordmark: Rubik 700, outlined, +0.09em tracking. Headings: Rubik. Body: system. Product UIs: JetBrains Mono (their own voice).`,
+    `<div style="font-family: Rubik, system-ui, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.09em">Yellow Pine</div>`, '#FCFCFC'));
   card('colors.html', dsCard('Brand', 'Palette', `#FFD100 Cyber Yellow · #202020 Eerie Black · #FCFCFC Baby Powder · #3C91E6 Bleu De France (dark bg / accents) · #1a75c8 Link on Light · #333533 Jet (elevated dark surface)`,
     `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8', '#333533'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
 }
