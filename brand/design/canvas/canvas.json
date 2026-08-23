@@ -1,16 +1,70 @@
 {
   "artboards": [
-    { "file": "Cover.dc.html", "x": 0, "y": -520, "w": 880, "h": 400, "title": "Cover" },
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 880, "h": 1560, "title": "Identity v2" },
-    { "file": "MarkStory.dc.html", "x": 980, "y": 0, "w": 880, "h": 1220, "title": "Why it changed" },
-    { "file": "Applications.dc.html", "x": 980, "y": 1320, "w": 880, "h": 780, "title": "In situ" },
-    { "file": "Foundations.dc.html", "x": 1900, "y": 0, "w": 880, "h": 1120, "title": "Foundations" },
-    { "file": "Greenfield.dc.html", "x": 2820, "y": 0, "w": 880, "h": 1440, "title": "Greenfield (proposal)" }
+    {
+      "file": "Cover.dc.html",
+      "x": 0,
+      "y": -520,
+      "w": 880,
+      "h": 400,
+      "title": "Cover"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 880,
+      "h": 1560,
+      "title": "Identity v2"
+    },
+    {
+      "file": "MarkStory.dc.html",
+      "x": 980,
+      "y": 0,
+      "w": 880,
+      "h": 1220,
+      "title": "Why it changed"
+    },
+    {
+      "file": "Applications.dc.html",
+      "x": 980,
+      "y": 1320,
+      "w": 880,
+      "h": 780,
+      "title": "In situ"
+    },
+    {
+      "file": "Foundations.dc.html",
+      "x": 1900,
+      "y": 0,
+      "w": 880,
+      "h": 1120,
+      "title": "Foundations"
+    }
   ],
   "annotations": [
-    { "id": "brief", "x": 980, "y": -520, "w": 420, "text": "Brand modernization, Aug 2026 — the mark now reads pine-first while keeping the original's rounded geometry, Cyber Yellow, and lean.\nSource of truth: github.com/yellow-pine/.github → brand/. Board sources: brand/design/ in the same repo — edit masters there, rebuild, then refresh these boards." },
-    { "id": "panel-verdict", "x": 1420, "y": -520, "w": 400, "text": "Four directions were rendered and scored by a three-lens critique (strategy / production / semantics) with true 16px favicon tests.\nShipped = C's silhouette + B's lean; v2.1 retuned it (deeper tier step, sturdier trunk from A) so ONE mark serves every size." },
-    { "id": "rollout", "x": 1900, "y": 1320, "w": 340, "text": "Rollout still open: kishi.fyi / latch.fyi / bly.fyi favicons + headers still serve v1 (they live in grove). Swap them app-by-app using brand/icon.svg." }
+    {
+      "id": "brief",
+      "x": 980,
+      "y": -520,
+      "w": 420,
+      "text": "Brand modernization, Aug 2026 — the mark now reads pine-first while keeping the original's rounded geometry, Cyber Yellow, and lean.\nSource of truth: github.com/yellow-pine/.github → brand/. Board sources: brand/design/ in the same repo — edit masters there, rebuild, then refresh these boards."
+    },
+    {
+      "id": "panel-verdict",
+      "x": 1420,
+      "y": -520,
+      "w": 400,
+      "text": "Four directions were rendered and scored by a three-lens critique (strategy / production / semantics) with true 16px favicon tests.\nShipped = C's silhouette + B's lean; v2.1 retuned it (deeper tier step, sturdier trunk from A) so ONE mark serves every size."
+    },
+    {
+      "id": "rollout",
+      "x": 1900,
+      "y": 1320,
+      "w": 340,
+      "text": "Rollout still open: kishi.fyi / latch.fyi / bly.fyi favicons + headers still serve v1 (they live in grove). Swap them app-by-app using brand/icon.svg."
+    }
   ],
-  "launch": { "view": "canvas" }
+  "launch": {
+    "view": "canvas"
+  }
 }

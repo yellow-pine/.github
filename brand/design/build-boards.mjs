@@ -31,7 +31,7 @@ const cand = (f, w) => strip(candidate(f), w);
 const oldMark = (w) => strip(candidate('mark-B-flight.svg'), w);
 
 const SOT = 'github.com/yellow-pine/.github';
-const VERSION = 'Identity v2.2 · August 2026';
+const VERSION = 'Identity v3 · August 2026';
 
 const HEAD = `<!doctype html>
 <html>
@@ -42,11 +42,11 @@ const HEAD = `<!doctype html>
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap">
   <style>
-    body { margin: 0; font-family: "Rubik", "Trebuchet MS", system-ui, sans-serif; color: #202020; }
-    a { color: #1a75c8; } a:hover { color: #155f9f; }
-    h2 { font-size: 15px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
+    body { margin: 0; font-family: "Source Sans 3", system-ui, sans-serif; color: #121E17; }
+    a { color: #1C533D; } a:hover { color: #143D2D; }
+    h2 { font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; margin: 0; color: #5A675F; }
     p, li { font-weight: 500; }
   </style>
 </helmet>`;
@@ -55,38 +55,38 @@ const FOOT = `</x-dc>
 </html>`;
 
 const eyebrow = (t) =>
-  `<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: #6a6a68; text-transform: uppercase">${t}</div>`;
+  `<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: #5A675F; text-transform: uppercase">${t}</div>`;
 
 const swatch = (hex, name, role) =>
   `<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 0">
-    <div style="background: ${hex}; height: 84px; border-radius: 10px; border: 1px solid rgba(32,32,32,0.08)"></div>
+    <div style="background: ${hex}; height: 84px; border-radius: 10px; border: 1px solid rgba(18,30,23,0.08)"></div>
     <div style="font-size: 12px; font-weight: 600">${name}</div>
-    <div style="font-size: 11px; color: #6a6a68">${hex} · ${role}</div>
+    <div style="font-size: 11px; color: #5A675F">${hex} · ${role}</div>
   </div>`;
 
 const candCard = (svgHtml, name, score, verdict, winner) =>
-  `<div style="display: flex; flex-direction: column; gap: 12px; background: #ffffff; border: 1px solid rgba(32,32,32,${winner ? '0.35' : '0.08'}); border-radius: 14px; padding: 20px">
+  `<div style="display: flex; flex-direction: column; gap: 12px; background: #ffffff; border: 1px solid rgba(18,30,23,${winner ? '0.35' : '0.08'}); border-radius: 14px; padding: 20px">
     <div style="height: 150px; display: flex; align-items: center; justify-content: center">${svgHtml}</div>
     <div style="display: flex; align-items: baseline; gap: 8px">
       <div style="font-size: 13px; font-weight: 800">${name}</div>
-      <div style="font-size: 11px; font-weight: 600; color: ${winner ? '#202020' : '#6a6a68'}; background: ${winner ? '#FFD100' : 'rgba(32,32,32,0.06)'}; border-radius: 99px; padding: 2px 8px">${score}</div>
+      <div style="font-size: 11px; font-weight: 600; color: ${winner ? '#121E17' : '#5A675F'}; background: ${winner ? '#F2CE59' : 'rgba(18,30,23,0.06)'}; border-radius: 99px; padding: 2px 8px">${score}</div>
     </div>
-    <p style="font-size: 12px; line-height: 1.55; margin: 0; color: #46464a; text-wrap: pretty">${verdict}</p>
+    <p style="font-size: 12px; line-height: 1.55; margin: 0; color: #3F4A44; text-wrap: pretty">${verdict}</p>
   </div>`;
 
 const tab = (title, active) =>
-  `<div style="display: flex; align-items: center; gap: 8px; background: ${active ? '#2d2d30' : 'transparent'}; border-radius: 8px 8px 0 0; padding: 8px 14px; font-size: 11.5px; color: ${active ? '#FCFCFC' : '#9a9a98'}; white-space: nowrap">${icon(16)}<span>${title}</span></div>`;
+  `<div style="display: flex; align-items: center; gap: 8px; background: ${active ? '#2d2d30' : 'transparent'}; border-radius: 8px 8px 0 0; padding: 8px 14px; font-size: 11.5px; color: ${active ? '#F8F7F2' : '#9a9a98'}; white-space: nowrap">${icon(16)}<span>${title}</span></div>`;
 
 // Self-contained design-system card: first-line @dsCard marker feeds the Design System
-// pane; only external reference is Google Fonts (Rubik — the brand face).
+// pane; only external reference is Google Fonts (Literata — the brand face).
 const dsCard = (group, title, note, stage, bg) => `<!-- @dsCard group="${group}" -->
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>${title}</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap">
-  <style>body { margin: 0; font-family: "Rubik", system-ui, sans-serif; background: ${bg}; color: ${bg === '#202020' ? '#FCFCFC' : '#202020'}; }</style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600&display=swap">
+  <style>body { margin: 0; font-family: "Literata", Georgia, serif; background: ${bg}; color: ${bg === '#121E17' ? '#F8F7F2' : '#121E17'}; }</style>
 </head>
 <body>
 <div style="display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; padding: 32px; min-height: 200px">
@@ -108,44 +108,44 @@ export function build(outDir = DESIGN) {
 
   // ------------------------------------------------------------------- Cover
   board('Cover.dc.html', `${HEAD}
-<div style="background: #FCFCFC; padding: 72px 64px; display: flex; flex-direction: column; gap: 36px; justify-content: center">
+<div style="background: #F8F7F2; padding: 72px 64px; display: flex; flex-direction: column; gap: 36px; justify-content: center">
   <div style="padding: 4px 0">${logo(700)}</div>
   <div style="display: flex; flex-direction: column; gap: 12px">
-    <div style="font-size: 19px; font-weight: 600; color: #202020">Thoughtful tools, built with care.</div>
-    <div style="font-size: 12px; color: #6a6a68; line-height: 1.6; max-width: 70ch">${VERSION} · Source of truth: <strong>${SOT} → brand/</strong> — this project is the design home; the published SVG masters and these boards' sources (brand/design/) live in the repo.</div>
+    <div style="font-size: 19px; font-weight: 600; color: #121E17">Thoughtful tools, built with care.</div>
+    <div style="font-size: 12px; color: #5A675F; line-height: 1.6; max-width: 70ch">${VERSION} · Source of truth: <strong>${SOT} → brand/</strong> — this project is the design home; the published SVG masters and these boards' sources (brand/design/) live in the repo.</div>
   </div>
 </div>
 ${FOOT}`);
 
   // ------------------------------------------------------------ Main sheet
   board('Main.dc.html', `${HEAD}
-<div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 40px">
+<div style="background: #F8F7F2; padding: 56px; display: flex; flex-direction: column; gap: 40px">
   ${eyebrow('Yellow Pine · ' + VERSION)}
   <div style="display: flex; flex-direction: column; gap: 10px">
-    <div style="font-size: 34px; font-weight: 800; line-height: 1.1; text-wrap: balance">The plane becomes a pine.</div>
-    <p style="font-size: 14px; line-height: 1.55; margin: 0; max-width: 62ch; text-wrap: pretty">A two-tier pine with a 4° lean — keeping the original mark's rounded geometry, Cyber Yellow, and tilt energy, and finally making the name land on sight. Wordmark set in Rubik 700, the brand face.</p>
+    <div style="font-family: Literata, Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15; text-wrap: balance">The name becomes the palette.</div>
+    <p style="font-size: 14px; line-height: 1.55; margin: 0; max-width: 62ch; text-wrap: pretty">Identity v3, adopted while the company is preproduction: the greenfield system the design skills derive from the premise alone. \u201cYellow\u201d is the wood-gold tree; \u201cPine\u201d is the forest green it grows in. Wordmark set in Literata 600; the mark keeps its v2.1 geometry, recolored.</p>
   </div>
   <div style="padding: 8px 0">${logo(768)}</div>
-  <div style="background: #202020; border-radius: 16px; padding: 40px 32px">${logoDark(704)}</div>
+  <div style="background: #121E17; border-radius: 16px; padding: 40px 32px">${logoDark(704)}</div>
   <div style="display: flex; flex-direction: column; gap: 18px">
     <h2>The mark</h2>
     <div style="display: flex; gap: 28px; align-items: flex-end">
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${mark(120)}<div style="font-size: 11px; color: #6a6a68">mark.svg</div></div>
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${icon(150)}<div style="font-size: 11px; color: #6a6a68">icon.svg · the tile</div></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${mark(120)}<div style="font-size: 11px; color: #5A675F">mark.svg</div></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${icon(150)}<div style="font-size: 11px; color: #5A675F">icon.svg · the tile</div></div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">
         <div style="display: flex; gap: 12px; align-items: flex-end">${icon(48)}${icon(32)}${icon(16)}</div>
-        <div style="font-size: 11px; color: #6a6a68">one mark at every size · 48 / 32 / 16 true-size</div>
+        <div style="font-size: 11px; color: #5A675F">one mark at every size · 48 / 32 / 16 true-size</div>
       </div>
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 18px">
     <h2>Color</h2>
-    <p style="font-size: 12px; color: #6a6a68; margin: 0; max-width: 66ch">Four hues. Everything else — link steps, the dark chassis ladder, brass, status — is a derived token, not a color (see Foundations). The proper names are the conventional names of the nearest classic colors, inherited from the original brand setup.</p>
+    <p style="font-size: 12px; color: #5A675F; margin: 0; max-width: 66ch">Two brand hues plus the reserved status pair. Every other value — dark-theme steps (pine-300 #99D3B9, gold-300 #F2CE59), muted text, print stock — is a derived token, not a color (see Foundations). Derived twice independently from the premise; near-identical results.</p>
     <div style="display: flex; gap: 16px">
-      ${swatch('#FFD100', 'Cyber Yellow', 'identity — the mark')}
-      ${swatch('#202020', 'Eerie Black', 'neutral — ink / tile')}
-      ${swatch('#FCFCFC', 'Baby Powder', 'neutral — paper')}
-      ${swatch('#3C91E6', 'Bleu de France', 'interactive — accent')}
+      ${swatch('#F8F7F2', 'Paper', 'surface · print stock')}
+      ${swatch('#121E17', 'Forest Ink', 'text on light · the dark surface')}
+      ${swatch('#1C533D', 'Pine', 'brand primary · links · wordmark')}
+      ${swatch('#AC8717', 'Wood Gold', 'brand accent · the mark on light')}
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
@@ -158,7 +158,7 @@ ${FOOT}`);
       <li>WCAG AA: light lockup on light, dark lockup on dark.</li>
     </ul>
   </div>
-  <div style="border-top: 1px solid rgba(32,32,32,0.1); padding-top: 18px; font-size: 12px; color: #6a6a68">
+  <div style="border-top: 1px solid rgba(18,30,23,0.1); padding-top: 18px; font-size: 12px; color: #5A675F">
     Source of truth: <strong>${SOT} → brand/</strong> · editable here in the Yellow Pine Brand project · board sources: brand/design/ in the repo.
   </div>
 </div>
@@ -166,12 +166,12 @@ ${FOOT}`);
 
   // ------------------------------------------------------------- Mark story
   board('MarkStory.dc.html', `${HEAD}
-<div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 36px">
+<div style="background: #F8F7F2; padding: 56px; display: flex; flex-direction: column; gap: 36px">
   ${eyebrow('Why it changed')}
   <div style="display: flex; gap: 28px; align-items: center">
-    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${oldMark(96)}<div style="font-size: 11px; color: #6a6a68">v1 (Brandmark era) — read as a play button / paper plane</div></div>
-    <div style="font-size: 26px; color: #6a6a68">→</div>
-    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${mark(96)}<div style="font-size: 11px; color: #6a6a68">v2.1 (today) — a pine, still on its way somewhere</div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${oldMark(96)}<div style="font-size: 11px; color: #5A675F">v1 (Brandmark era) — read as a play button / paper plane</div></div>
+    <div style="font-size: 26px; color: #5A675F">→</div>
+    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${mark(96)}<div style="font-size: 11px; color: #5A675F">v2.1 (today) — a pine, still on its way somewhere</div></div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 16px">
     <h2>Four directions, three critics</h2>
@@ -183,104 +183,67 @@ ${FOOT}`);
       ${candCard(cand('mark-D-north.svg', 96), 'D · North', '14.5', 'Sleek, but reads as every map app’s heading arrow, and its thin tips starve beside the heavy rounded wordmark.')}
     </div>
   </div>
-  <div style="background: #202020; color: #FCFCFC; border-radius: 14px; padding: 22px 26px; font-size: 13px; line-height: 1.6">
-    <strong style="color: #FFD100">Synthesis.</strong> C's silhouette + B's 4° lean, retuned in v2.1 (deeper tier step, sturdier trunk from A) so one mark serves every size. Tile gestalt (rounded square, yellow on Eerie Black) unchanged for recognition continuity. The face (Rubik 700) and palette verdicts live on the <strong>Foundations</strong> board.
+  <div style="background: #121E17; color: #F8F7F2; border-radius: 14px; padding: 22px 26px; font-size: 13px; line-height: 1.6">
+    <strong style="color: #F2CE59">Synthesis.</strong> C's silhouette + B's 4° lean, retuned in v2.1 (deeper tier step, sturdier trunk from A) so one mark serves every size. In v3 the geometry is unchanged and only recolored: wood gold on light, gold-300 on the forest dark. The full v3 story lives on the <strong>Foundations</strong> board.
   </div>
 </div>
 ${FOOT}`);
 
   // ------------------------------------------------------------ Foundations
   board('Foundations.dc.html', `${HEAD}
-<div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 36px">
+<div style="background: #F8F7F2; padding: 56px; display: flex; flex-direction: column; gap: 36px">
   ${eyebrow('Foundations · type & color pass · August 2026')}
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>The face</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The brand face is <strong>Rubik 700</strong> — chosen by a three-lens panel (personality, mark harmony, production) over fourteen candidate faces and the incumbent: its rounded stems and terminals share the pine&#39;s corner language, warm enough for kishi, credible enough for Latch, a living 300–900 variable family for headings. The wordmark is set in Rubik 700 at +0.02em tracking and shipped as outlines (no font dependency); the generator and vendored OFL font live in brand/design/. Product UIs keep their own voices (kishi and Latch run JetBrains Mono as UI identity — deliberately divergent from the umbrella brand).</p>
-    <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.02em">AaBbCcDdEe 0123456789</div>
-    <div style="display: flex; flex-direction: column; gap: 10px; background: #ffffff; border: 1px solid rgba(32,32,32,0.08); border-radius: 14px; padding: 22px">
-      <div style="font-size: 11px; color: #6a6a68; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Proof — outlines vs the live face</div>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Identity v3 type system, derived premise-only: <strong>three families, no more</strong> (the better-typography cap, with JetBrains Mono counted as the products&#39; own face). <strong>Literata 600</strong> is the brand face — lockup and display (a warm literary serif pairs by maximal contrast with the products&#39; rigid mono; three independent derivations all chose this category); <strong>Source Sans 3</strong> carries body and UI (400/600/700 + real italic); <strong>JetBrains Mono</strong> keeps code, data, and eyebrow labels. The wordmark is Literata 600 at −0.01em, shipped as outlines via brand/design/gen-wordmark.mjs (vendored OFL font). Fraunces won the display slot on paper but failed the outline-pipeline production gate; Literata was the replicate&#39;s own equal-standing pick.</p>
+    <div style="font-family: Literata, Georgia, serif; font-weight: 600; font-size: 30px; letter-spacing: -0.01em">AaBbCcDdEe 0123456789</div>
+    <div style="display: flex; flex-direction: column; gap: 10px; background: #ffffff; border: 1px solid rgba(18,30,23,0.08); border-radius: 14px; padding: 22px">
+      <div style="font-size: 11px; color: #5A675F; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Proof — outlines vs the live face</div>
       ${logo(560)}
-      <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 47px; letter-spacing: 0.02em; line-height: 1; color: #202020">Yellow&#8195;Pine</div>
-      <div style="font-size: 11px; color: #6a6a68">Top: the outlined lockup masters. Bottom: live Rubik 700 from Google Fonts at the same tracking — same face, byte-reproducible via brand/design/gen-wordmark.mjs.</div>
+      <div style="font-family: Literata, Georgia, serif; font-weight: 600; font-size: 47px; letter-spacing: -0.01em; line-height: 1; color: #1C533D">Yellow&#8195;Pine</div>
+      <div style="font-size: 11px; color: #5A675F">Top: the outlined lockup masters. Bottom: live Literata 600 from Google Fonts at the same tracking — same face, byte-reproducible via brand/design/gen-wordmark.mjs.</div>
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Color contracts</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Every pairing below is computed, not eyeballed. One correction shipped from the audit: link text on light uses the derived token <strong>#1a75c8</strong> (same oklch hue and chroma as Bleu De France, darkened to pass AA); #3C91E6 remains correct on dark backgrounds, for large text, and for non-text accents. Elevated dark surfaces come from the neutral ladder, never a separate color. Cyber Yellow on light is the logo only — never functional UI.</p>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Every pairing below is computed, not eyeballed — the whole v3 system was derived twice independently from the premise and every value re-verified before shipping. Pine-700 is the interactive and brand-text color on light; gold is graphic-only on light (3.1:1 non-text) and text-capable on the forest dark. Status pass/fail are reserved, always icon + label, and hold ΔE ≥ 15 from brand pine in both themes.</p>
     <table style="border-collapse: collapse; font-size: 12px; max-width: 640px">
-      <tr style="text-align: left; color: #6a6a68"><th style="padding: 6px 14px 6px 0; font-weight: 600">Pairing</th><th style="padding: 6px 14px; font-weight: 600">Ratio</th><th style="padding: 6px 0; font-weight: 600">Verdict</th></tr>
-      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#202020 text on #FCFCFC</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">15.9</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AAA</td></tr>
-      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#FFD100 mark on #202020 tile</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">11.2</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">non-text, wide margin</td></tr>
-      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#1a75c8 links on #FCFCFC</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">4.6</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AA — the light-background link</td></tr>
-      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#3C91E6 links on #202020</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">5.0</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AA — the dark-background link</td></tr>
-      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#3C91E6 on light</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">3.2</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">large text and accents only</td></tr>
-      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#FFD100 on light</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">1.4</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">logo exemption only</td></tr>
+      <tr style="text-align: left; color: #5A675F"><th style="padding: 6px 14px 6px 0; font-weight: 600">Pairing</th><th style="padding: 6px 14px; font-weight: 600">Ratio</th><th style="padding: 6px 0; font-weight: 600">Verdict</th></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">#121E17 ink on #F8F7F2 paper</td><td style="padding: 6px 14px; border-top: 1px solid rgba(18,30,23,0.08)">16.0</td><td style="padding: 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">AAA</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">#1C533D pine links on paper</td><td style="padding: 6px 14px; border-top: 1px solid rgba(18,30,23,0.08)">8.3</td><td style="padding: 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">AA+ — brand text and links</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">#99D3B9 pine links on forest</td><td style="padding: 6px 14px; border-top: 1px solid rgba(18,30,23,0.08)">10.1</td><td style="padding: 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">AA+ — dark-theme links</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">#AC8717 gold mark on paper</td><td style="padding: 6px 14px; border-top: 1px solid rgba(18,30,23,0.08)">3.1</td><td style="padding: 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">non-text only on light</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">#F2CE59 gold on forest</td><td style="padding: 6px 14px; border-top: 1px solid rgba(18,30,23,0.08)">11.2</td><td style="padding: 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">text-capable — gold leads on dark</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">#1F812D / #AC2724 status on paper</td><td style="padding: 6px 14px; border-top: 1px solid rgba(18,30,23,0.08)">4.6 / 6.4</td><td style="padding: 6px 0; border-top: 1px solid rgba(18,30,23,0.08)">AA — pass / fail, icon + label always</td></tr>
     </table>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Derived, not picked</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">A menu-free derivation from premises alone reconstructs this system: the yellow&#39;s gamut physics forces surface-not-text; the dev tool&#39;s pass/fail semantics forbid a pine-green dark; status reservations eliminate every interactive hue family except blue; the mark&#39;s rounded DNA plus mono-contrast and production gates derive an admissible face set that resolves to Rubik. Novel findings shipped: the ink-only lockup (grayscale erases yellow) and brass #7E6604, the one AA-legal brand-hue text on light. The 600-weight/negative-tracking suggestion was tested and declined — 700 counters hold at header size and match the trunk&#39;s mass.</p>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Identity v3 IS the derivation: with the company in preproduction, the greenfield system the skills build from the premise alone was adopted outright (quality over continuity). Two independent premise-only replicates produced near-identical palettes — pine primary, wood-gold accent, forest ink doubling as the dark surface, warm paper stock — and three independent runs chose a warm literary serif for the face. The name becomes the palette: gold is &#8220;Yellow&#8221;, green is &#8220;Pine&#8221;. The v2 system (Cyber Yellow + neutral ink + azure + Rubik) was the skills&#39; answer anchored on the inherited Brandmark mark equity; it remains archived in git history.</p>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
-    <h2>The palette selection</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Seven complete systems competed (validator-gated: WCAG + colorblind separation), judged twice through three lenses — once openly, once <strong>blind</strong> (codenamed systems, no incumbent framing). The same system won both rounds, 2/3 each: Cyber Yellow on neutral ink is ownable in both the dev-tool and consumer seas, and blue is the only accent hue with no status baggage. Role guardrails: <strong>#FFD100 is identity only</strong> (mark, badge, selection wash — never charts or status colors); <strong>blue is interactive only</strong> (links, focus, info); elevated dark surfaces come from the neutral ladder (#2A2A2A raised), never a separate color. Extended tokens (surfaces, text steps, link-on-dark #82BCF2, status trio with orange-shifted warning) are AA-verified in brand/README.</p>
+    <h2>Selection history (v2 era)</h2>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Seven complete systems competed (validator-gated: WCAG + colorblind separation), judged twice through three lenses — once openly, once <strong>blind</strong> — during the v2 era, when the system was anchored on the inherited Cyber Yellow mark. The incumbent won both anchored rounds; the premise-only derivations later showed what the skills build without the anchor, and with the company in preproduction that greenfield system was adopted as v3. This section is the selection history; the live guardrails are: <strong>gold is graphic-only on light, text-capable on dark</strong>; <strong>pine is the interactive and brand-text hue</strong>; <strong>status pass/fail are reserved</strong> (icon + label, ΔE ≥ 15 from brand pine).</p>
     ${[
-      ['A · Cyber (shipped)', ['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8'], 'winner 2/3 — every role has a worker; zero re-rollout', true],
+      ['A · Cyber (v2 winner)', ['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8'], 'won both anchored rounds; superseded by the premise-only v3 adoption', true],
       ['B · Amber &amp; Forest', ['#ffc336', '#242018', '#fcfaf4', '#2f8856', '#278250'], 'warm and handsome; drifts template-cream, surrenders the ownable yellow'],
       ['C · Evergreen Night', ['#FFD100', '#152c22', '#FCFCFC', '#1b8d5a', '#0a8553'], 'personality winner — but green accent collides with pass/fail semantics in a dev tool'],
       ['D · Honey &amp; Ink', ['#ecbe2a', '#1D1D1F', '#fcfbf8', '#3C91E6', '#1a75c8'], 'premium but dims the one distinctive asset'],
       ['E · Citrus &amp; Slate', ['#f5da3a', '#1e242f', '#fafcfe', '#3e89d7', '#2a76c3'], 'swims into the navy dev-tool sea'],
       ['F · Duotone', ['#FFD100', '#1C1C1C', '#FCFCFC', '#3a3a3a', '#3a3a3a'], 'strongest restraint and CVD margins; starves real UI of an accent'],
       ['G · Golden Hour', ['#ffcb38', '#26201c', '#fdfaf6', '#ce604a', '#bd513b'], 'the flagged cream+terracotta default; coral links read as errors'],
-    ].map(([name, chips, note, win]) => `<div style="display: flex; align-items: center; gap: 14px${win ? '; background: #ffffff; border: 1px solid rgba(32,32,32,0.35); border-radius: 10px; padding: 8px 12px' : '; padding: 8px 12px'}">
-      <div style="display: flex; gap: 4px">${chips.map((h) => `<div style="width: 26px; height: 26px; border-radius: 6px; background: ${h}; border: 1px solid rgba(32,32,32,0.12)"></div>`).join('')}</div>
+    ].map(([name, chips, note, win]) => `<div style="display: flex; align-items: center; gap: 14px${win ? '; background: #ffffff; border: 1px solid rgba(18,30,23,0.35); border-radius: 10px; padding: 8px 12px' : '; padding: 8px 12px'}">
+      <div style="display: flex; gap: 4px">${chips.map((h) => `<div style="width: 26px; height: 26px; border-radius: 6px; background: ${h}; border: 1px solid rgba(18,30,23,0.12)"></div>`).join('')}</div>
       <div style="font-size: 12px; font-weight: 700; white-space: nowrap">${name}</div>
-      <div style="font-size: 11.5px; color: #6a6a68; text-wrap: pretty">${note}</div>
+      <div style="font-size: 11.5px; color: #5A675F; text-wrap: pretty">${note}</div>
     </div>`).join('\n    ')}
-  </div>
-</div>
-${FOOT}`);
-
-  // ------------------------------------------------------------ Greenfield (proposal)
-  board('Greenfield.dc.html', `${HEAD.replace('</helmet>', '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;600&display=swap">\n</helmet>')}
-<div style="background: #F8F7F2; padding: 56px; display: flex; flex-direction: column; gap: 32px">
-  <div style="background: #121E17; color: #F8F7F2; border-radius: 10px; padding: 10px 16px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; align-self: flex-start">Proposal — not adopted</div>
-  <div style="display: flex; flex-direction: column; gap: 10px">
-    <div style="font-size: 32px; font-weight: 700; line-height: 1.1; color: #121E17">What the skills design from the premise alone</div>
-    <p style="font-size: 13.5px; line-height: 1.55; margin: 0; max-width: 66ch; color: #121E17; text-wrap: pretty">Two independent premise-only derivations (no existing hexes, mark, or font given) converged on this system: pine green leads, resin gold accents, warm paper, pine-cast ink — and a literary serif carries the brand. The shipped identity is the skills&#39; answer <em>given</em> the existing Cyber Yellow mark equity; this is their answer without it. Adopting it is a rebrand decision, not a refinement.</p>
-  </div>
-  <div style="display: flex; flex-direction: column; gap: 14px">
-    <h2 style="color: #121E17">The lockup, both themes</h2>
-    <div style="background: #F8F7F2; border: 1px solid rgba(18,30,23,0.12); border-radius: 14px; padding: 30px; display: flex; align-items: center; gap: 22px">
-      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #121E17; letter-spacing: -0.015em">Yellow</span>
-      <span style="display: inline-flex; width: 64px">${mark(64).replaceAll('#FFD100', '#1C533D')}</span>
-      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #121E17; letter-spacing: -0.015em">Pine</span>
-    </div>
-    <div style="background: #121E17; border-radius: 14px; padding: 30px; display: flex; align-items: center; gap: 22px">
-      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #F8F7F2; letter-spacing: -0.015em">Yellow</span>
-      <span style="display: inline-flex; width: 64px">${mark(64).replaceAll('#FFD100', '#F2CE59')}</span>
-      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #F8F7F2; letter-spacing: -0.015em">Pine</span>
-    </div>
-  </div>
-  <div style="display: flex; flex-direction: column; gap: 14px">
-    <h2 style="color: #121E17">Derived palette</h2>
-    <div style="display: flex; gap: 12px; flex-wrap: wrap">
-      ${[['#1C533D','pine-700 · brand primary (light)'],['#99D3B9','pine-300 · brand on dark'],['#AD8604','gold-600 · accent, graphic-only on light'],['#F2CE59','gold-300 · gold leads on dark'],['#F8F7F2','paper'],['#121E17','ink / forest'],['#1F812D','status pass'],['#901114','status fail']].map(([h,l]) => `<div style="display: flex; flex-direction: column; gap: 6px; width: 118px"><div style="height: 56px; border-radius: 8px; background: ${h}; border: 1px solid rgba(18,30,23,0.12)"></div><div style="font-size: 10.5px; color: #121E17">${h}<br>${l}</div></div>`).join('')}
-    </div>
-  </div>
-  <div style="display: flex; flex-direction: column; gap: 10px; color: #121E17">
-    <h2 style="color: #121E17">Derived type system (3 families)</h2>
-    <p style="font-size: 13px; line-height: 1.6; margin: 0; max-width: 66ch; text-wrap: pretty"><strong>Display + lockup:</strong> a warm craft serif — the replicates split between Alegreya, Literata, and Fraunces (the one true taste residue; Alegreya shown, chosen twice). <strong>Body/UI:</strong> a humanist sans (Source Sans 3 derived). <strong>Code/data:</strong> JetBrains Mono, already the products&#39; interior face. Full web scale 55→12px and print scale 29→9pt derived with a 1.25 ratio from the 16px/12pt anchors.</p>
-  </div>
-  <div style="background: #1C533D; color: #F8F7F2; border-radius: 14px; padding: 20px 24px; font-size: 13px; line-height: 1.6">
-    <strong style="color: #F2CE59">The fork.</strong> Keep the shipped system (the skills&#39; verdict given the live yellow equity — zero rollout cost, three blind/adversarial confirmations) or adopt this greenfield system (the skills&#39; unconditioned verdict — a full rebrand of mark color, face, palette, and every live surface). Owner&#39;s call.
   </div>
 </div>
 ${FOOT}`);
 
   // ------------------------------------------------------------ Applications
   board('Applications.dc.html', `${HEAD}
-<div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 32px">
+<div style="background: #F8F7F2; padding: 56px; display: flex; flex-direction: column; gap: 32px">
   ${eyebrow('In situ')}
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Org profile</h2>
@@ -302,24 +265,24 @@ ${FOOT}`);
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Terminal</h2>
-    <div style="background: #202020; border-radius: 14px; padding: 24px 26px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; line-height: 1.9">
-      <div><span style="color: #FFD100">➜</span> <span style="color: #3C91E6">~/code</span> <span style="color: #FCFCFC">gh repo view yellow-pine/.github</span></div>
+    <div style="background: #121E17; border-radius: 14px; padding: 24px 26px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; line-height: 1.9">
+      <div><span style="color: #F2CE59">➜</span> <span style="color: #99D3B9">~/code</span> <span style="color: #F8F7F2">gh repo view yellow-pine/.github</span></div>
       <div style="color: #9a9a98">The Yellow Pine homepage — org profile, public brand library, and org-wide config.</div>
-      <div><span style="color: #FFD100">➜</span> <span style="color: #3C91E6">~/code</span> <span style="color: #FCFCFC">git push</span> <span style="color: #9a9a98"># built with 💛 by a tiny human team and a fleet of agents</span></div>
+      <div><span style="color: #F2CE59">➜</span> <span style="color: #99D3B9">~/code</span> <span style="color: #F8F7F2">git push</span> <span style="color: #9a9a98"># built with 💛 by a tiny human team and a fleet of agents</span></div>
     </div>
   </div>
 </div>
 ${FOOT}`);
 
   // ------------------------------------------- Design-system cards (@dsCard)
-  card('logo-light.html', dsCard('Brand', 'Logo — light backgrounds', `Master: brand/logo.svg in ${SOT}`, logo(560), '#FCFCFC'));
-  card('logo-dark.html', dsCard('Brand', 'Logo — dark backgrounds', `Master: brand/logo-dark.svg in ${SOT}`, logoDark(560), '#202020'));
-  card('mark.html', dsCard('Brand', 'Mark', `Two-tier pine, 4° lean. Master: brand/mark.svg in ${SOT}`, mark(140), '#FCFCFC'));
-  card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
-  card('type.html', dsCard('Brand', 'Type — Rubik', `Wordmark: Rubik 700, outlined, +0.02em tracking. Headings: Rubik. Body: system. Product UIs: JetBrains Mono (their own voice).`,
-    `<div style="font-family: Rubik, system-ui, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.02em">Yellow Pine</div>`, '#FCFCFC'));
-  card('colors.html', dsCard('Brand', 'Palette — four hues', `Identity: #FFD100 Cyber Yellow. Neutrals: #202020 Eerie Black (ink), #FCFCFC Baby Powder (paper). Interactive: #3C91E6 Bleu de France. Derived tokens: link steps #1a75c8 / #82BCF2, dark ladder #161616/#2A2A2A, brass #7E6604.`,
-    `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
+  card('logo-light.html', dsCard('Brand', 'Logo — light backgrounds', `Master: brand/logo.svg in ${SOT}`, logo(560), '#F8F7F2'));
+  card('logo-dark.html', dsCard('Brand', 'Logo — dark backgrounds', `Master: brand/logo-dark.svg in ${SOT}`, logoDark(560), '#121E17'));
+  card('mark.html', dsCard('Brand', 'Mark', `Two-tier pine, 4° lean. Master: brand/mark.svg in ${SOT}`, mark(140), '#F8F7F2'));
+  card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#F8F7F2'));
+  card('type.html', dsCard('Brand', 'Type — Literata', `Wordmark + display: Literata 600, −0.01em, outlined. Body/UI: Source Sans 3 400/600/700. Code/data/eyebrows: JetBrains Mono. Three families, no more.`,
+    `<div style="font-family: Literata, Georgia, serif; font-weight: 600; font-size: 34px; letter-spacing: -0.01em; color: #1C533D">Yellow Pine</div>`, '#F8F7F2'));
+  card('colors.html', dsCard('Brand', 'Palette — pine and gold', `Brand: #1C533D Pine (primary, links) + #AC8717 Wood Gold (accent; #F2CE59 leads on dark). Ground: #F8F7F2 Paper + #121E17 Forest Ink (text on light, the dark surface). Status: #1F812D pass / #AC2724 fail, reserved.`,
+    `<div style="display: flex; gap: 10px">${['#1C533D', '#AC8717', '#F8F7F2', '#121E17'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#F8F7F2'));
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
