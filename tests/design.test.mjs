@@ -23,8 +23,8 @@ const CANVAS = join(DESIGN, 'canvas');
 const CARDS = join(DESIGN, 'cards');
 const read = (p) => readFileSync(p, 'utf8');
 
-const MASTERS = ['logo.svg', 'logo-dark.svg', 'icon.svg', 'favicon.svg', 'mark.svg'];
-const BOARDS = ['Cover.dc.html', 'Main.dc.html', 'MarkStory.dc.html', 'Applications.dc.html'];
+const MASTERS = ['logo.svg', 'logo-dark.svg', 'icon.svg', 'mark.svg'];
+const BOARDS = ['Cover.dc.html', 'Main.dc.html', 'MarkStory.dc.html', 'Foundations.dc.html', 'Applications.dc.html'];
 const CANDIDATES = ['mark-A-grove.svg', 'mark-B-flight.svg', 'mark-C-canopy.svg', 'mark-D-north.svg'];
 const PROJECT_ID = 'e1932f3e-7810-4729-a638-09fecad7d7ab';
 
@@ -87,6 +87,13 @@ test('rebuild is byte-identical to the committed outputs', async () => {
 
 // --- design-system cards -----------------------------------------------------------
 
+test('the brand ships ONE mark — no small-size fork', () => {
+  assert.ok(!existsSync(join(BRAND, 'favicon.svg')), 'favicon.svg exists — the small cut was consolidated into the single v2.1 mark');
+  assert.ok(!existsSync(join(CARDS, 'favicon.html')), 'cards/favicon.html exists — small-cut card was retired');
+  const all = [...BOARDS.map((f) => read(join(CANVAS, f))), read(join(BRAND, 'README.md'))].join('\n');
+  assert.ok(!/small cut|below 48/i.test(all), 'stale small-cut / below-48px rule survives in boards or README');
+});
+
 test('every card opens with a @dsCard marker on line one', () => {
   for (const f of readdirSync(CARDS).filter((f) => f.endsWith('.html'))) {
     const firstLine = read(join(CARDS, f)).split('\n', 1)[0];
@@ -141,7 +148,15 @@ test('boards and cards are self-contained (fonts + support.js excepted)', () => 
 
 test('Main board palette matches the documented palette', () => {
   const main = read(join(CANVAS, 'Main.dc.html'));
-  for (const hex of ['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#333533']) {
+  for (const hex of ['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#333533', '#1a75c8']) {
     assert.ok(main.includes(hex), `palette hex ${hex} missing from Main board`);
+  }
+});
+
+test('boards use the identified brand face and the accessible link token', () => {
+  for (const f of BOARDS) {
+    const board = read(join(CANVAS, f));
+    assert.ok(board.includes('family=Kanit'), `${f}: boards should load Kanit — the identified wordmark face`);
+    assert.ok(!/a \{ color: #3C91E6/.test(board), `${f}: links on light must use the AA token #1a75c8, not raw #3C91E6`);
   }
 });

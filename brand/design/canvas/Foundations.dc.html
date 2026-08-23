@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&display=swap">
+  <style>
+    body { margin: 0; font-family: "Kanit", "Trebuchet MS", system-ui, sans-serif; color: #202020; }
+    a { color: #1a75c8; } a:hover { color: #155f9f; }
+    h2 { font-size: 15px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
+    p, li { font-weight: 500; }
+  </style>
+</helmet>
+<div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 36px">
+  <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: #6a6a68; text-transform: uppercase">Foundations · type & color pass · August 2026</div>
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2>The face</h2>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The wordmark is set in <strong>Kanit SemiBold</strong> (outlined — no font dependency), identified by metric forensics against twenty candidates: every letter gap fits Kanit&#39;s native kerning plus one constant +0.135em of tracking. Two deliberate customizations: a 22% wider, flat-apex <strong>w</strong> and a rounder i-dot. The tight &#39;Ye&#39; pair is the face&#39;s own kern — kept as a signature. Use Kanit for headings in brand materials; body copy stays system.</p>
+    <div style="font-family: Kanit, sans-serif; font-weight: 600; font-size: 30px; letter-spacing: 0.135em">AaBbCcDdEe 0123456789</div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2>Color contracts</h2>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Every pairing below is computed, not eyeballed. One correction shipped from the audit: link text on light uses the derived token <strong>#1a75c8</strong> (same oklch hue and chroma as Bleu De France, darkened to pass AA); #3C91E6 remains correct on dark backgrounds, for large text, and for non-text accents. Jet is an elevated dark surface, not an accent. Cyber Yellow on light is the logo only — never functional UI.</p>
+    <table style="border-collapse: collapse; font-size: 12px; max-width: 640px">
+      <tr style="text-align: left; color: #6a6a68"><th style="padding: 6px 14px 6px 0; font-weight: 600">Pairing</th><th style="padding: 6px 14px; font-weight: 600">Ratio</th><th style="padding: 6px 0; font-weight: 600">Verdict</th></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#202020 text on #FCFCFC</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">15.9</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AAA</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#FFD100 mark on #202020 tile</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">11.2</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">non-text, wide margin</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#1a75c8 links on #FCFCFC</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">4.6</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AA — the light-background link</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#3C91E6 links on #202020</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">5.0</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AA — the dark-background link</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#3C91E6 on light</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">3.2</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">large text and accents only</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#FFD100 on light</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">1.4</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">logo exemption only</td></tr>
+    </table>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

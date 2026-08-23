@@ -27,7 +27,6 @@ const logo = (w) => strip(master('logo'), w);
 const logoDark = (w) => strip(master('logo-dark'), w);
 const mark = (w) => strip(master('mark'), w);
 const icon = (w) => strip(master('icon'), w);
-const fav = (w) => strip(master('favicon'), w);
 const cand = (f, w) => strip(candidate(f), w);
 const oldMark = (w) => strip(candidate('mark-B-flight.svg'), w);
 
@@ -42,10 +41,10 @@ const HEAD = `<!doctype html>
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&display=swap">
   <style>
-    body { margin: 0; font-family: "Poppins", "Trebuchet MS", system-ui, sans-serif; color: #202020; }
-    a { color: #3C91E6; } a:hover { color: #2a7dc9; }
+    body { margin: 0; font-family: "Kanit", "Trebuchet MS", system-ui, sans-serif; color: #202020; }
+    a { color: #1a75c8; } a:hover { color: #155f9f; }
     h2 { font-size: 15px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
     p, li { font-weight: 500; }
   </style>
@@ -75,7 +74,7 @@ const candCard = (svgHtml, name, score, verdict, winner) =>
   </div>`;
 
 const tab = (title, active) =>
-  `<div style="display: flex; align-items: center; gap: 8px; background: ${active ? '#2d2d30' : 'transparent'}; border-radius: 8px 8px 0 0; padding: 8px 14px; font-size: 11.5px; color: ${active ? '#FCFCFC' : '#9a9a98'}; white-space: nowrap">${fav(16)}<span>${title}</span></div>`;
+  `<div style="display: flex; align-items: center; gap: 8px; background: ${active ? '#2d2d30' : 'transparent'}; border-radius: 8px 8px 0 0; padding: 8px 14px; font-size: 11.5px; color: ${active ? '#FCFCFC' : '#9a9a98'}; white-space: nowrap">${icon(16)}<span>${title}</span></div>`;
 
 // Self-contained design-system card: first-line @dsCard marker feeds the Design System
 // pane; no external references at all (system fonts only).
@@ -130,11 +129,10 @@ ${FOOT}`);
     <h2>The mark</h2>
     <div style="display: flex; gap: 28px; align-items: flex-end">
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${mark(120)}<div style="font-size: 11px; color: #6a6a68">mark.svg</div></div>
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${icon(150)}<div style="font-size: 11px; color: #6a6a68">icon.svg · ≥ 48px</div></div>
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${fav(150)}<div style="font-size: 11px; color: #6a6a68">favicon.svg · &lt; 48px<br>single tier, sturdy trunk</div></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">${icon(150)}<div style="font-size: 11px; color: #6a6a68">icon.svg · the tile</div></div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: center">
-        <div style="display: flex; gap: 12px; align-items: flex-end">${fav(48)}${fav(32)}${fav(16)}</div>
-        <div style="font-size: 11px; color: #6a6a68">true size · 48 / 32 / 16</div>
+        <div style="display: flex; gap: 12px; align-items: flex-end">${icon(48)}${icon(32)}${icon(16)}</div>
+        <div style="font-size: 11px; color: #6a6a68">one mark at every size · 48 / 32 / 16 true-size</div>
       </div>
     </div>
   </div>
@@ -144,14 +142,15 @@ ${FOOT}`);
       ${swatch('#FFD100', 'Cyber Yellow', 'the mark')}
       ${swatch('#202020', 'Eerie Black', 'foreground')}
       ${swatch('#FCFCFC', 'Baby Powder', 'background')}
-      ${swatch('#3C91E6', 'Bleu De France', 'links')}
-      ${swatch('#333533', 'Jet', 'muted accent')}
+      ${swatch('#3C91E6', 'Bleu De France', 'links on dark · accents')}
+      ${swatch('#1a75c8', 'Link on Light', 'link text on light · AA')}
+      ${swatch('#333533', 'Jet', 'elevated dark surface')}
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Rules</h2>
     <ul style="margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.7; max-width: 66ch">
-      <li>Below 48px always use the small cut — the tier notches are what muddies first.</li>
+      <li>One mark at every size — the v2.1 geometry (deep tier step, sturdy trunk) is tuned to survive 16px.</li>
       <li>The mark sits <strong>between</strong> the words. That placement is the signature.</li>
       <li>Clear space: the wordmark's x-height on all sides.</li>
       <li>Never stretch, skew, add effects, change the lean, or recolor outside the variants.</li>
@@ -177,14 +176,39 @@ ${FOOT}`);
     <h2>Four directions, three critics</h2>
     <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 64ch; text-wrap: pretty">Each candidate was rendered and judged through three independent lenses — brand strategy, production (true-16px favicon tests), and semantics — before anything shipped.</p>
     <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
-      ${candCard(cand('mark-A-grove.svg', 96), 'A · Grove', '20.5', 'Production winner — indestructible at 16px. Tradeoff: trunk vanishes small, drifting toward a generic triangle. Survives as the v2 small cut.')}
+      ${candCard(cand('mark-A-grove.svg', 96), 'A · Grove', '20.5', 'Production winner — indestructible at 16px. Tradeoff: trunk vanishes small, drifting toward a generic triangle. Its sturdy trunk and simplicity informed the v2.1 tuning.')}
       ${candCard(oldMark(80), 'B · Flight', '17', 'Strategy winner — the ownable pine-cursor duality. Tradeoff: reads play-button at small sizes; the exact problem being fixed.')}
       ${candCard(cand('mark-C-canopy.svg', 96), 'C · Canopy', '22 · shipped', 'Semantics winner — pine undeniable, and the truest heir of v1’s rounded, notched construction. Shipped with B’s lean added.', true)}
       ${candCard(cand('mark-D-north.svg', 96), 'D · North', '14.5', 'Sleek, but reads as every map app’s heading arrow, and its thin tips starve beside the heavy rounded wordmark.')}
     </div>
   </div>
   <div style="background: #202020; color: #FCFCFC; border-radius: 14px; padding: 22px 26px; font-size: 13px; line-height: 1.6">
-    <strong style="color: #FFD100">Synthesis.</strong> C's silhouette + B's 4° lean as the primary mark; A's geometry as the dedicated small cut. Tile gestalt (rounded square, yellow on Eerie Black) unchanged for recognition continuity.
+    <strong style="color: #FFD100">Synthesis.</strong> C's silhouette + B's 4° lean, retuned in v2.1 (deeper tier step, sturdier trunk from A) so one mark serves every size. Tile gestalt (rounded square, yellow on Eerie Black) unchanged for recognition continuity.
+  </div>
+</div>
+${FOOT}`);
+
+  // ------------------------------------------------------------ Foundations
+  board('Foundations.dc.html', `${HEAD}
+<div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 36px">
+  ${eyebrow('Foundations · type & color pass · August 2026')}
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2>The face</h2>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The wordmark is set in <strong>Kanit SemiBold</strong> (outlined — no font dependency), identified by metric forensics against twenty candidates: every letter gap fits Kanit&#39;s native kerning plus one constant +0.135em of tracking. Two deliberate customizations: a 22% wider, flat-apex <strong>w</strong> and a rounder i-dot. The tight &#39;Ye&#39; pair is the face&#39;s own kern — kept as a signature. Use Kanit for headings in brand materials; body copy stays system.</p>
+    <div style="font-family: Kanit, sans-serif; font-weight: 600; font-size: 30px; letter-spacing: 0.135em">AaBbCcDdEe 0123456789</div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2>Color contracts</h2>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Every pairing below is computed, not eyeballed. One correction shipped from the audit: link text on light uses the derived token <strong>#1a75c8</strong> (same oklch hue and chroma as Bleu De France, darkened to pass AA); #3C91E6 remains correct on dark backgrounds, for large text, and for non-text accents. Jet is an elevated dark surface, not an accent. Cyber Yellow on light is the logo only — never functional UI.</p>
+    <table style="border-collapse: collapse; font-size: 12px; max-width: 640px">
+      <tr style="text-align: left; color: #6a6a68"><th style="padding: 6px 14px 6px 0; font-weight: 600">Pairing</th><th style="padding: 6px 14px; font-weight: 600">Ratio</th><th style="padding: 6px 0; font-weight: 600">Verdict</th></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#202020 text on #FCFCFC</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">15.9</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AAA</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#FFD100 mark on #202020 tile</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">11.2</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">non-text, wide margin</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#1a75c8 links on #FCFCFC</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">4.6</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AA — the light-background link</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#3C91E6 links on #202020</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">5.0</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AA — the dark-background link</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#3C91E6 on light</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">3.2</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">large text and accents only</td></tr>
+      <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#FFD100 on light</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">1.4</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">logo exemption only</td></tr>
+    </table>
   </div>
 </div>
 ${FOOT}`);
@@ -226,10 +250,11 @@ ${FOOT}`);
   card('logo-light.html', dsCard('Brand', 'Logo — light backgrounds', `Master: brand/logo.svg in ${SOT}`, logo(560), '#FCFCFC'));
   card('logo-dark.html', dsCard('Brand', 'Logo — dark backgrounds', `Master: brand/logo-dark.svg in ${SOT}`, logoDark(560), '#202020'));
   card('mark.html', dsCard('Brand', 'Mark', `Two-tier pine, 4° lean. Master: brand/mark.svg in ${SOT}`, mark(140), '#FCFCFC'));
-  card('icon.html', dsCard('Brand', 'App tile — 48px and up', `Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
-  card('favicon.html', dsCard('Brand', 'Small cut — below 48px', `Single tier, sturdy trunk. Master: brand/favicon.svg in ${SOT}`, fav(160), '#FCFCFC'));
-  card('colors.html', dsCard('Brand', 'Palette', `#FFD100 Cyber Yellow · #202020 Eerie Black · #FCFCFC Baby Powder · #3C91E6 Bleu De France · #333533 Jet`,
-    `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#333533'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
+  card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
+  card('type.html', dsCard('Brand', 'Type — Kanit', `Wordmark: Kanit SemiBold, outlined, custom w + i-dot. Headings: Kanit. Body: system.`,
+    `<div style="font-family: Kanit, system-ui, sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.1em">Yellow Pine</div><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap">`, '#FCFCFC'));
+  card('colors.html', dsCard('Brand', 'Palette', `#FFD100 Cyber Yellow · #202020 Eerie Black · #FCFCFC Baby Powder · #3C91E6 Bleu De France (dark bg / accents) · #1a75c8 Link on Light · #333533 Jet (elevated dark surface)`,
+    `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8', '#333533'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
