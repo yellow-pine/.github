@@ -1,5 +1,5 @@
 // Re-typesets the Yellow Pine lockup masters (../logo.svg, ../logo-dark.svg) from the
-// vendored brand face: Rubik 700 (fonts/literata-600.ttf, OFL — chosen 2026-08 by a
+// vendored brand face: Rubik 700 (fonts/rubik-700.ttf, OFL — chosen 2026-08 by a
 // three-lens panel over fourteen candidate faces plus the incumbent).
 //
 // Run rarely — only when the face, tracking, or mark changes:
@@ -17,11 +17,11 @@ const opentype = require('opentype.js');
 const DESIGN = dirname(fileURLToPath(import.meta.url));
 const BRAND = join(DESIGN, '..');
 
-const CAP = 198, BASELINE = 311, MARK_H = 384, TRACK_EM = -0.01;
+const CAP = 198, BASELINE = 311, MARK_H = 384, TRACK_EM = 0.02;
 const GAP_LEFT = 122, GAP_RIGHT = 146; // word→mark bearings: tighter after Yellow (mark mass leans right)
 const MARGIN = 5;
 
-const buf = readFileSync(join(DESIGN, 'fonts', 'literata-600.ttf'));
+const buf = readFileSync(join(DESIGN, 'fonts', 'rubik-700.ttf'));
 const font = opentype.parse(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
 const capH = font.tables.os2 && font.tables.os2.sCapHeight > 0
   ? font.tables.os2.sCapHeight
@@ -33,12 +33,9 @@ function word(text, xStart) {
   let x = xStart, d = '', prev = null;
   for (const ch of text) {
     const g = font.charToGlyph(ch);
-    if (prev) {
-      const k = font.getKerningValue(prev, g);
-      if (Number.isFinite(k)) x += k * scale;
-    }
+    if (prev) x += (font.getKerningValue(prev, g) || 0) * scale;
     d += g.getPath(x, BASELINE, font.unitsPerEm * scale).toPathData(1);
-    x += (Number.isFinite(g.advanceWidth) ? g.advanceWidth : font.unitsPerEm * 0.5) * scale + tracking;
+    x += g.advanceWidth * scale + tracking;
     prev = g;
   }
   return { d, end: x - tracking };
@@ -56,25 +53,23 @@ const markY = 200 - (markVB[1] + markVB[3] / 2) * markScale;
 const pine = word('Pine', yellow.end + GAP_LEFT + markW + GAP_RIGHT);
 const width = (pine.end + MARGIN).toFixed(1);
 
-const lockup = (textFill, markFill, file) => writeFileSync(join(BRAND, file),
+const lockup = (fill, file) => writeFileSync(join(BRAND, file),
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 400" role="img" aria-label="Yellow Pine">
   <title>Yellow Pine</title>
-  <g transform="translate(${markX.toFixed(1)},${markY.toFixed(1)}) scale(${markScale.toFixed(4)})">${markPaths.replaceAll('#AC8717', markFill)}</g>
-  <path fill="${textFill}" fill-rule="nonzero" d="${yellow.d}${pine.d}"/>
+  <g transform="translate(${markX.toFixed(1)},${markY.toFixed(1)}) scale(${markScale.toFixed(4)})">${markPaths}</g>
+  <path fill="${fill}" fill-rule="nonzero" d="${yellow.d}${pine.d}"/>
 </svg>
 `);
-// Light: pine wordmark, gold mark ("Yellow" is literally the gold tree between pine words).
-lockup('#1C533D', '#AC8717', 'logo.svg');
-// Forest: gold leads — the whole lockup in gold-300 (replicate verdict: pine recedes on dark).
-lockup('#F2CE59', '#F2CE59', 'logo-dark.svg');
+lockup('#202020', 'logo.svg');
+lockup('#FCFCFC', 'logo-dark.svg');
 
 // Ink-only master: grayscale print kills the yellow (it grays to ~85% near-white),
 // so a one-color lockup must exist — mark and wordmark both in ink.
 writeFileSync(join(BRAND, 'logo-mono.svg'),
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 400" role="img" aria-label="Yellow Pine">
   <title>Yellow Pine</title>
-  <g transform="translate(${markX.toFixed(1)},${markY.toFixed(1)}) scale(${markScale.toFixed(4)})">${markPaths.replaceAll('#AC8717', '#121E17')}</g>
-  <path fill="#121E17" fill-rule="nonzero" d="${yellow.d}${pine.d}"/>
+  <g transform="translate(${markX.toFixed(1)},${markY.toFixed(1)}) scale(${markScale.toFixed(4)})">${markPaths.replaceAll('#FFD100', '#202020')}</g>
+  <path fill="#202020" fill-rule="nonzero" d="${yellow.d}${pine.d}"/>
 </svg>
 `);
 

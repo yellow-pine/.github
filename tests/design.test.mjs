@@ -24,9 +24,7 @@ const CARDS = join(DESIGN, 'cards');
 const read = (p) => readFileSync(p, 'utf8');
 
 const MASTERS = ['logo.svg', 'logo-dark.svg', 'icon.svg', 'mark.svg'];
-// Generated boards only — Greenfield.dc.html is a hand-authored PROPOSAL board,
-// listed in canvas.json but excluded from builder-drift invariants.
-const BOARDS = ['Cover.dc.html', 'Main.dc.html', 'MarkStory.dc.html', 'Foundations.dc.html', 'Applications.dc.html'];
+const BOARDS = ['Cover.dc.html', 'Main.dc.html', 'MarkStory.dc.html', 'Foundations.dc.html', 'Applications.dc.html', 'Greenfield.dc.html'];
 const CANDIDATES = ['mark-A-grove.svg', 'mark-B-flight.svg', 'mark-C-canopy.svg', 'mark-D-north.svg'];
 const PROJECT_ID = 'e1932f3e-7810-4729-a638-09fecad7d7ab';
 
@@ -106,7 +104,7 @@ test('every card opens with a @dsCard marker on line one', () => {
 test('cards use the brand face for their labels', () => {
   for (const f of readdirSync(CARDS).filter((f) => f.endsWith('.html'))) {
     const card = read(join(CARDS, f));
-    assert.ok(card.includes('family=Literata'), `cards/${f}: brand materials label in the brand face`);
+    assert.ok(card.includes('family=Rubik'), `cards/${f}: brand materials label in Kanit`);
   }
 });
 
@@ -155,13 +153,13 @@ test('boards and cards are self-contained (fonts + support.js excepted)', () => 
   }
 });
 
-test('Main board shows the v3 hues; derived steps live in tokens', () => {
+test('Main board shows exactly the four hues; derived steps live in tokens', () => {
   const main = read(join(CANVAS, 'Main.dc.html'));
-  for (const hex of ['#F8F7F2', '#121E17', '#1C533D', '#AC8717']) {
-    assert.ok(main.includes(hex), `v3 hue ${hex} missing from Main board`);
+  for (const hex of ['#FFD100', '#202020', '#FCFCFC', '#3C91E6']) {
+    assert.ok(main.includes(hex), `hue ${hex} missing from Main board`);
   }
-  assert.ok(!main.includes('#FFD100'), 'v2 Cyber Yellow retired from the live palette (historical boards may show it)');
-  assert.ok(read(join(CANVAS, 'Foundations.dc.html')).includes('#F2CE59'), 'gold dark step belongs on Foundations');
+  assert.ok(!main.includes('#333533'), 'Jet is retired — the raised-dark is the neutral ladder step #2A2A2A');
+  assert.ok(read(join(CANVAS, 'Foundations.dc.html')).includes('#1a75c8'), 'derived link step belongs on Foundations');
 });
 
 test('no surface resurrects the retired Jet orphan', () => {
@@ -171,11 +169,10 @@ test('no surface resurrects the retired Jet orphan', () => {
   assert.ok(!/\|[^\n]*#333533/.test(readme), 'Jet still listed as a token row in the palette table');
 });
 
-test('boards use the v3 faces and the pine link token', () => {
+test('boards use the identified brand face and the accessible link token', () => {
   for (const f of BOARDS) {
     const board = read(join(CANVAS, f));
-    assert.ok(board.includes('family=Literata'), `${f}: boards should load Literata — the v3 brand face`);
-    assert.ok(board.includes('family=Source+Sans+3'), `${f}: boards should load Source Sans 3 — the body face`);
-    assert.ok(/a \{ color: #1C533D/.test(board), `${f}: links on light are pine-700`);
+    assert.ok(board.includes('family=Rubik'), `${f}: boards should load Rubik — the chosen brand face`);
+    assert.ok(!/a \{ color: #3C91E6/.test(board), `${f}: links on light must use the AA token #1a75c8, not raw #3C91E6`);
   }
 });
