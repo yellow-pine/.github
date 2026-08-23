@@ -28,8 +28,16 @@ legible at 16 px, so there is no separate favicon variant to maintain.
 | Elevated dark surface | Jet | `#333533` |
 
 Contrast contracts are computed, not eyeballed — the full matrix lives on the Foundations
-board in [`design/`](design/). Cyber Yellow on light backgrounds is the logo only (WCAG
-logo exemption, 1.4:1) — never functional icons, text, or UI.
+board in [`design/`](design/). The palette was confirmed (2026-08-23) by a three-lens,
+skills-armed selection over seven complete candidate systems, all validator-gated; the
+incumbent won on argued merit. Role guardrails from that verdict:
+
+- **`#FFD100` is identity only** — the mark and badges. Never a chart series (use a darker
+  gold step) and never a status color; a future status-amber must step clearly away from it.
+- **Blue is interactive only** — links, focus rings, info badges; never decorative or
+  identity. On light backgrounds it is always the `#1a75c8` token.
+- Cyber Yellow on light backgrounds is the logo only (WCAG logo exemption, 1.4:1) — never
+  functional icons, text, or UI.
 
 ## Type
 

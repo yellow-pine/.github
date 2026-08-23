@@ -217,6 +217,23 @@ ${FOOT}`);
       <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#FFD100 on light</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">1.4</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">logo exemption only</td></tr>
     </table>
   </div>
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2>The palette selection</h2>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Seven complete systems competed (validator-gated: WCAG + colorblind separation), judged through three lenses. The incumbent won on argued merit — Cyber Yellow on neutral ink is ownable in both the dev-tool and consumer seas, and blue is the only accent hue with no status baggage. Role guardrails from the verdict: <strong>#FFD100 is identity only</strong> (mark, badge — never charts or status colors); <strong>blue is interactive only</strong> (links, focus, info); Jet is an elevated dark surface, not an accent.</p>
+    ${[
+      ['A · Cyber (shipped)', ['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8'], 'winner 2/3 — every role has a worker; zero re-rollout', true],
+      ['B · Amber &amp; Forest', ['#ffc336', '#242018', '#fcfaf4', '#2f8856', '#278250'], 'warm and handsome; drifts template-cream, surrenders the ownable yellow'],
+      ['C · Evergreen Night', ['#FFD100', '#152c22', '#FCFCFC', '#1b8d5a', '#0a8553'], 'personality winner — but green accent collides with pass/fail semantics in a dev tool'],
+      ['D · Honey &amp; Ink', ['#ecbe2a', '#1D1D1F', '#fcfbf8', '#3C91E6', '#1a75c8'], 'premium but dims the one distinctive asset'],
+      ['E · Citrus &amp; Slate', ['#f5da3a', '#1e242f', '#fafcfe', '#3e89d7', '#2a76c3'], 'swims into the navy dev-tool sea'],
+      ['F · Duotone', ['#FFD100', '#1C1C1C', '#FCFCFC', '#3a3a3a', '#3a3a3a'], 'strongest restraint and CVD margins; starves real UI of an accent'],
+      ['G · Golden Hour', ['#ffcb38', '#26201c', '#fdfaf6', '#ce604a', '#bd513b'], 'the flagged cream+terracotta default; coral links read as errors'],
+    ].map(([name, chips, note, win]) => `<div style="display: flex; align-items: center; gap: 14px${win ? '; background: #ffffff; border: 1px solid rgba(32,32,32,0.35); border-radius: 10px; padding: 8px 12px' : '; padding: 8px 12px'}">
+      <div style="display: flex; gap: 4px">${chips.map((h) => `<div style="width: 26px; height: 26px; border-radius: 6px; background: ${h}; border: 1px solid rgba(32,32,32,0.12)"></div>`).join('')}</div>
+      <div style="font-size: 12px; font-weight: 700; white-space: nowrap">${name}</div>
+      <div style="font-size: 11.5px; color: #6a6a68; text-wrap: pretty">${note}</div>
+    </div>`).join('\n    ')}
+  </div>
 </div>
 ${FOOT}`);
 
