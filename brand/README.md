@@ -1,6 +1,6 @@
 # Yellow Pine Brand
 
-The canonical public brand library — **identity v2** (August 2026 modernization). Clean
+The canonical public brand library — **identity v2.2** (August 2026). Clean
 outlined vectors with tight viewBoxes and no metadata cruft — use them as-is.
 
 The mark is a two-tier pine with a 4° lean: a tree that's on its way somewhere. One mark
@@ -75,6 +75,6 @@ Brandmark mark's rounded geometry and tilt with an unmistakable pine silhouette.
 (2026-08-23): the mark retuned (deeper tier step, sturdier trunk) so one geometry serves
 every size, retiring the separate small-size cut; color pass added the link-on-light
 token `#1a75c8` and re-roled Jet. v2.2 (2026-08-23): wordmark re-typeset in **Rubik 700**
-(panel-chosen brand face), replacing the Brandmark-era customized-Kanit outlines. The v1
+(panel-chosen brand face), replacing the Brandmark-era outlined lettering. The v1
 Brandmark-generated identity is archived in the private `yellow-pine/brand-assets`
 repository and in this repo's git history.

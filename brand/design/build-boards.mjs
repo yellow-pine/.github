@@ -31,6 +31,7 @@ const cand = (f, w) => strip(candidate(f), w);
 const oldMark = (w) => strip(candidate('mark-B-flight.svg'), w);
 
 const SOT = 'github.com/yellow-pine/.github';
+const VERSION = 'Identity v2.2 · August 2026';
 
 const HEAD = `<!doctype html>
 <html>
@@ -111,7 +112,7 @@ export function build(outDir = DESIGN) {
   <div style="padding: 4px 0">${logo(700)}</div>
   <div style="display: flex; flex-direction: column; gap: 12px">
     <div style="font-size: 19px; font-weight: 600; color: #202020">Thoughtful tools, built with care.</div>
-    <div style="font-size: 12px; color: #6a6a68; line-height: 1.6; max-width: 70ch">Identity v2 · August 2026 · Source of truth: <strong>${SOT} → brand/</strong> — this project is the design home; the published SVG masters and these boards' sources (brand/design/) live in the repo.</div>
+    <div style="font-size: 12px; color: #6a6a68; line-height: 1.6; max-width: 70ch">${VERSION} · Source of truth: <strong>${SOT} → brand/</strong> — this project is the design home; the published SVG masters and these boards' sources (brand/design/) live in the repo.</div>
   </div>
 </div>
 ${FOOT}`);
@@ -119,7 +120,7 @@ ${FOOT}`);
   // ------------------------------------------------------------ Main sheet
   board('Main.dc.html', `${HEAD}
 <div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 40px">
-  ${eyebrow('Yellow Pine · Identity v2 · August 2026')}
+  ${eyebrow('Yellow Pine · ' + VERSION)}
   <div style="display: flex; flex-direction: column; gap: 10px">
     <div style="font-size: 34px; font-weight: 800; line-height: 1.1; text-wrap: balance">The plane becomes a pine.</div>
     <p style="font-size: 14px; line-height: 1.55; margin: 0; max-width: 62ch; text-wrap: pretty">A two-tier pine with a 4° lean — keeping the original mark's rounded geometry, Cyber Yellow, and tilt energy, and finally making the name land on sight. Wordmark set in Rubik 700, the brand face.</p>
@@ -169,9 +170,9 @@ ${FOOT}`);
 <div style="background: #FCFCFC; padding: 56px; display: flex; flex-direction: column; gap: 36px">
   ${eyebrow('Why it changed')}
   <div style="display: flex; gap: 28px; align-items: center">
-    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${oldMark(96)}<div style="font-size: 11px; color: #6a6a68">v1 — read as a play button / paper plane</div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${oldMark(96)}<div style="font-size: 11px; color: #6a6a68">v1 (Brandmark era) — read as a play button / paper plane</div></div>
     <div style="font-size: 26px; color: #6a6a68">→</div>
-    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${mark(96)}<div style="font-size: 11px; color: #6a6a68">v2 — a pine, still on its way somewhere</div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">${mark(96)}<div style="font-size: 11px; color: #6a6a68">v2.1 (today) — a pine, still on its way somewhere</div></div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 16px">
     <h2>Four directions, three critics</h2>
@@ -184,7 +185,7 @@ ${FOOT}`);
     </div>
   </div>
   <div style="background: #202020; color: #FCFCFC; border-radius: 14px; padding: 22px 26px; font-size: 13px; line-height: 1.6">
-    <strong style="color: #FFD100">Synthesis.</strong> C's silhouette + B's 4° lean, retuned in v2.1 (deeper tier step, sturdier trunk from A) so one mark serves every size. Tile gestalt (rounded square, yellow on Eerie Black) unchanged for recognition continuity.
+    <strong style="color: #FFD100">Synthesis.</strong> C's silhouette + B's 4° lean, retuned in v2.1 (deeper tier step, sturdier trunk from A) so one mark serves every size. Tile gestalt (rounded square, yellow on Eerie Black) unchanged for recognition continuity. The face (Rubik 700) and palette verdicts live on the <strong>Foundations</strong> board.
   </div>
 </div>
 ${FOOT}`);
