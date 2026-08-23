@@ -24,7 +24,7 @@ const CARDS = join(DESIGN, 'cards');
 const read = (p) => readFileSync(p, 'utf8');
 
 const MASTERS = ['logo.svg', 'logo-dark.svg', 'icon.svg', 'mark.svg'];
-const BOARDS = ['Cover.dc.html', 'Main.dc.html', 'MarkStory.dc.html', 'Foundations.dc.html', 'Applications.dc.html'];
+const BOARDS = ['Cover.dc.html', 'Main.dc.html', 'MarkStory.dc.html', 'Foundations.dc.html', 'Applications.dc.html', 'Greenfield.dc.html'];
 const CANDIDATES = ['mark-A-grove.svg', 'mark-B-flight.svg', 'mark-C-canopy.svg', 'mark-D-north.svg'];
 const PROJECT_ID = 'e1932f3e-7810-4729-a638-09fecad7d7ab';
 
@@ -153,11 +153,20 @@ test('boards and cards are self-contained (fonts + support.js excepted)', () => 
   }
 });
 
-test('Main board palette matches the documented palette', () => {
+test('Main board shows exactly the four hues; derived steps live in tokens', () => {
   const main = read(join(CANVAS, 'Main.dc.html'));
-  for (const hex of ['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#333533', '#1a75c8']) {
-    assert.ok(main.includes(hex), `palette hex ${hex} missing from Main board`);
+  for (const hex of ['#FFD100', '#202020', '#FCFCFC', '#3C91E6']) {
+    assert.ok(main.includes(hex), `hue ${hex} missing from Main board`);
   }
+  assert.ok(!main.includes('#333533'), 'Jet is retired — the raised-dark is the neutral ladder step #2A2A2A');
+  assert.ok(read(join(CANVAS, 'Foundations.dc.html')).includes('#1a75c8'), 'derived link step belongs on Foundations');
+});
+
+test('no surface resurrects the retired Jet orphan', () => {
+  const boards = BOARDS.map((f) => read(join(CANVAS, f))).join('\n');
+  assert.ok(!/#333533|\bJet\b(?!Brains)/.test(boards), 'retired #333533/Jet lives on a board');
+  const readme = read(join(BRAND, 'README.md'));
+  assert.ok(!/\|[^\n]*#333533/.test(readme), 'Jet still listed as a token row in the palette table');
 });
 
 test('boards use the identified brand face and the accessible link token', () => {

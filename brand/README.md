@@ -29,9 +29,12 @@ not additional colors.
 | Identity | brand-hue TEXT on light (derived dark step, AA 5.3:1) | `#7E6604` | — ("brass") |
 | Neutral | ink / dark tile | `#202020` | Eerie Black |
 | Neutral | paper | `#FCFCFC` | Baby Powder |
-| Neutral | elevated dark surface | `#333533` | Jet |
 | Interactive | accent · links on dark · large text | `#3C91E6` | Bleu de France |
 | Interactive | link on light (derived dark step, AA) | `#1a75c8` | — |
+
+Elevated dark surfaces come from the neutral ladder in the extended tokens (`#2A2A2A`
+raised), not from a separate color — the historical fifth Brandmark color, Jet `#333533`,
+is retired (it was an orphan: invisible against Eerie Black at 1.32:1, used by nothing).
 
 Contrast contracts are computed, not eyeballed — the full matrix lives on the Foundations
 board in [`design/`](design/). The palette was selected twice over seven complete candidate

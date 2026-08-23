@@ -140,14 +140,12 @@ ${FOOT}`);
   </div>
   <div style="display: flex; flex-direction: column; gap: 18px">
     <h2>Color</h2>
-    <p style="font-size: 12px; color: #6a6a68; margin: 0; max-width: 66ch">Four hues, not six colors: one identity yellow, three neutrals, one interactive blue whose contextual steps (#1a75c8 links on light, #82BCF2 links on dark) are derived, not separate colors. The proper names are the conventional names of the nearest classic colors, inherited from the original brand setup.</p>
+    <p style="font-size: 12px; color: #6a6a68; margin: 0; max-width: 66ch">Four hues. Everything else — link steps, the dark chassis ladder, brass, status — is a derived token, not a color (see Foundations). The proper names are the conventional names of the nearest classic colors, inherited from the original brand setup.</p>
     <div style="display: flex; gap: 16px">
       ${swatch('#FFD100', 'Cyber Yellow', 'identity — the mark')}
       ${swatch('#202020', 'Eerie Black', 'neutral — ink / tile')}
       ${swatch('#FCFCFC', 'Baby Powder', 'neutral — paper')}
-      ${swatch('#333533', 'Jet', 'neutral — elevated dark')}
       ${swatch('#3C91E6', 'Bleu de France', 'interactive — accent')}
-      ${swatch('#1a75c8', 'Bleu de France · dark step', 'link on light · AA')}
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
@@ -208,7 +206,7 @@ ${FOOT}`);
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Color contracts</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Every pairing below is computed, not eyeballed. One correction shipped from the audit: link text on light uses the derived token <strong>#1a75c8</strong> (same oklch hue and chroma as Bleu De France, darkened to pass AA); #3C91E6 remains correct on dark backgrounds, for large text, and for non-text accents. Jet is an elevated dark surface, not an accent. Cyber Yellow on light is the logo only — never functional UI.</p>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Every pairing below is computed, not eyeballed. One correction shipped from the audit: link text on light uses the derived token <strong>#1a75c8</strong> (same oklch hue and chroma as Bleu De France, darkened to pass AA); #3C91E6 remains correct on dark backgrounds, for large text, and for non-text accents. Elevated dark surfaces come from the neutral ladder, never a separate color. Cyber Yellow on light is the logo only — never functional UI.</p>
     <table style="border-collapse: collapse; font-size: 12px; max-width: 640px">
       <tr style="text-align: left; color: #6a6a68"><th style="padding: 6px 14px 6px 0; font-weight: 600">Pairing</th><th style="padding: 6px 14px; font-weight: 600">Ratio</th><th style="padding: 6px 0; font-weight: 600">Verdict</th></tr>
       <tr><td style="padding: 6px 14px 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">#202020 text on #FCFCFC</td><td style="padding: 6px 14px; border-top: 1px solid rgba(32,32,32,0.08)">15.9</td><td style="padding: 6px 0; border-top: 1px solid rgba(32,32,32,0.08)">AAA</td></tr>
@@ -225,7 +223,7 @@ ${FOOT}`);
   </div>
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>The palette selection</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Seven complete systems competed (validator-gated: WCAG + colorblind separation), judged twice through three lenses — once openly, once <strong>blind</strong> (codenamed systems, no incumbent framing). The same system won both rounds, 2/3 each: Cyber Yellow on neutral ink is ownable in both the dev-tool and consumer seas, and blue is the only accent hue with no status baggage. Role guardrails: <strong>#FFD100 is identity only</strong> (mark, badge, selection wash — never charts or status colors); <strong>blue is interactive only</strong> (links, focus, info); Jet is an elevated dark surface, not an accent. Extended tokens (surfaces, text steps, link-on-dark #82BCF2, status trio with orange-shifted warning) are AA-verified in brand/README.</p>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">Seven complete systems competed (validator-gated: WCAG + colorblind separation), judged twice through three lenses — once openly, once <strong>blind</strong> (codenamed systems, no incumbent framing). The same system won both rounds, 2/3 each: Cyber Yellow on neutral ink is ownable in both the dev-tool and consumer seas, and blue is the only accent hue with no status baggage. Role guardrails: <strong>#FFD100 is identity only</strong> (mark, badge, selection wash — never charts or status colors); <strong>blue is interactive only</strong> (links, focus, info); elevated dark surfaces come from the neutral ladder (#2A2A2A raised), never a separate color. Extended tokens (surfaces, text steps, link-on-dark #82BCF2, status trio with orange-shifted warning) are AA-verified in brand/README.</p>
     ${[
       ['A · Cyber (shipped)', ['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8'], 'winner 2/3 — every role has a worker; zero re-rollout', true],
       ['B · Amber &amp; Forest', ['#ffc336', '#242018', '#fcfaf4', '#2f8856', '#278250'], 'warm and handsome; drifts template-cream, surrenders the ownable yellow'],
@@ -239,6 +237,43 @@ ${FOOT}`);
       <div style="font-size: 12px; font-weight: 700; white-space: nowrap">${name}</div>
       <div style="font-size: 11.5px; color: #6a6a68; text-wrap: pretty">${note}</div>
     </div>`).join('\n    ')}
+  </div>
+</div>
+${FOOT}`);
+
+  // ------------------------------------------------------------ Greenfield (proposal)
+  board('Greenfield.dc.html', `${HEAD.replace('</helmet>', '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;600&display=swap">\n</helmet>')}
+<div style="background: #F8F7F2; padding: 56px; display: flex; flex-direction: column; gap: 32px">
+  <div style="background: #121E17; color: #F8F7F2; border-radius: 10px; padding: 10px 16px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; align-self: flex-start">Proposal — not adopted</div>
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <div style="font-size: 32px; font-weight: 700; line-height: 1.1; color: #121E17">What the skills design from the premise alone</div>
+    <p style="font-size: 13.5px; line-height: 1.55; margin: 0; max-width: 66ch; color: #121E17; text-wrap: pretty">Two independent premise-only derivations (no existing hexes, mark, or font given) converged on this system: pine green leads, resin gold accents, warm paper, pine-cast ink — and a literary serif carries the brand. The shipped identity is the skills&#39; answer <em>given</em> the existing Cyber Yellow mark equity; this is their answer without it. Adopting it is a rebrand decision, not a refinement.</p>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2 style="color: #121E17">The lockup, both themes</h2>
+    <div style="background: #F8F7F2; border: 1px solid rgba(18,30,23,0.12); border-radius: 14px; padding: 30px; display: flex; align-items: center; gap: 22px">
+      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #121E17; letter-spacing: -0.015em">Yellow</span>
+      <span style="display: inline-flex; width: 64px">${mark(64).replaceAll('#FFD100', '#1C533D')}</span>
+      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #121E17; letter-spacing: -0.015em">Pine</span>
+    </div>
+    <div style="background: #121E17; border-radius: 14px; padding: 30px; display: flex; align-items: center; gap: 22px">
+      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #F8F7F2; letter-spacing: -0.015em">Yellow</span>
+      <span style="display: inline-flex; width: 64px">${mark(64).replaceAll('#FFD100', '#F2CE59')}</span>
+      <span style="font-family: Alegreya, Georgia, serif; font-weight: 600; font-size: 52px; color: #F8F7F2; letter-spacing: -0.015em">Pine</span>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2 style="color: #121E17">Derived palette</h2>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap">
+      ${[['#1C533D','pine-700 · brand primary (light)'],['#99D3B9','pine-300 · brand on dark'],['#AD8604','gold-600 · accent, graphic-only on light'],['#F2CE59','gold-300 · gold leads on dark'],['#F8F7F2','paper'],['#121E17','ink / forest'],['#1F812D','status pass'],['#901114','status fail']].map(([h,l]) => `<div style="display: flex; flex-direction: column; gap: 6px; width: 118px"><div style="height: 56px; border-radius: 8px; background: ${h}; border: 1px solid rgba(18,30,23,0.12)"></div><div style="font-size: 10.5px; color: #121E17">${h}<br>${l}</div></div>`).join('')}
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 10px; color: #121E17">
+    <h2 style="color: #121E17">Derived type system (3 families)</h2>
+    <p style="font-size: 13px; line-height: 1.6; margin: 0; max-width: 66ch; text-wrap: pretty"><strong>Display + lockup:</strong> a warm craft serif — the replicates split between Alegreya, Literata, and Fraunces (the one true taste residue; Alegreya shown, chosen twice). <strong>Body/UI:</strong> a humanist sans (Source Sans 3 derived). <strong>Code/data:</strong> JetBrains Mono, already the products&#39; interior face. Full web scale 55→12px and print scale 29→9pt derived with a 1.25 ratio from the 16px/12pt anchors.</p>
+  </div>
+  <div style="background: #1C533D; color: #F8F7F2; border-radius: 14px; padding: 20px 24px; font-size: 13px; line-height: 1.6">
+    <strong style="color: #F2CE59">The fork.</strong> Keep the shipped system (the skills&#39; verdict given the live yellow equity — zero rollout cost, three blind/adversarial confirmations) or adopt this greenfield system (the skills&#39; unconditioned verdict — a full rebrand of mark color, face, palette, and every live surface). Owner&#39;s call.
   </div>
 </div>
 ${FOOT}`);
@@ -283,8 +318,8 @@ ${FOOT}`);
   card('icon.html', dsCard('Brand', 'App tile — every size', `One mark, 16px to hero. Master: brand/icon.svg in ${SOT}`, icon(160), '#FCFCFC'));
   card('type.html', dsCard('Brand', 'Type — Rubik', `Wordmark: Rubik 700, outlined, +0.02em tracking. Headings: Rubik. Body: system. Product UIs: JetBrains Mono (their own voice).`,
     `<div style="font-family: Rubik, system-ui, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.02em">Yellow Pine</div>`, '#FCFCFC'));
-  card('colors.html', dsCard('Brand', 'Palette — four hues', `Identity: #FFD100 Cyber Yellow. Neutrals: #202020 Eerie Black (ink), #FCFCFC Baby Powder (paper), #333533 Jet (elevated dark). Interactive: #3C91E6 Bleu de France, with derived link steps #1a75c8 (light) / #82BCF2 (dark).`,
-    `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6', '#1a75c8', '#333533'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
+  card('colors.html', dsCard('Brand', 'Palette — four hues', `Identity: #FFD100 Cyber Yellow. Neutrals: #202020 Eerie Black (ink), #FCFCFC Baby Powder (paper). Interactive: #3C91E6 Bleu de France. Derived tokens: link steps #1a75c8 / #82BCF2, dark ladder #161616/#2A2A2A, brass #7E6604.`,
+    `<div style="display: flex; gap: 10px">${['#FFD100', '#202020', '#FCFCFC', '#3C91E6'].map((h) => `<div style="width: 64px; height: 64px; border-radius: 10px; background: ${h}; border: 1px solid rgba(128,128,128,0.35)"></div>`).join('')}</div>`, '#FCFCFC'));
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

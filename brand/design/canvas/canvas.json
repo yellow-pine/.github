@@ -4,7 +4,8 @@
     { "file": "Main.dc.html", "x": 0, "y": 0, "w": 880, "h": 1560, "title": "Identity v2" },
     { "file": "MarkStory.dc.html", "x": 980, "y": 0, "w": 880, "h": 1220, "title": "Why it changed" },
     { "file": "Applications.dc.html", "x": 980, "y": 1320, "w": 880, "h": 780, "title": "In situ" },
-    { "file": "Foundations.dc.html", "x": 1900, "y": 0, "w": 880, "h": 1120, "title": "Foundations" }
+    { "file": "Foundations.dc.html", "x": 1900, "y": 0, "w": 880, "h": 1120, "title": "Foundations" },
+    { "file": "Greenfield.dc.html", "x": 2820, "y": 0, "w": 880, "h": 1440, "title": "Greenfield (proposal)" }
   ],
   "annotations": [
     { "id": "brief", "x": 980, "y": -520, "w": 420, "text": "Brand modernization, Aug 2026 — the mark now reads pine-first while keeping the original's rounded geometry, Cyber Yellow, and lean.\nSource of truth: github.com/yellow-pine/.github → brand/. Board sources: brand/design/ in the same repo — edit masters there, rebuild, then refresh these boards." },
