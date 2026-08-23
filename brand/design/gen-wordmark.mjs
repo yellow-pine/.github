@@ -33,7 +33,10 @@ function word(text, xStart) {
   let x = xStart, d = '', prev = null;
   for (const ch of text) {
     const g = font.charToGlyph(ch);
-    if (prev) x += (font.getKerningValue(prev, g) || 0) * scale;
+    if (prev) {
+      const k = font.getKerningValue(prev, g);
+      if (Number.isFinite(k)) x += k * scale; // some fonts (e.g. Fraunces) yield NaN kerns via opentype.js
+    }
     d += g.getPath(x, BASELINE, font.unitsPerEm * scale).toPathData(1);
     x += g.advanceWidth * scale + tracking;
     prev = g;
