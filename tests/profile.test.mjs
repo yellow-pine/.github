@@ -25,7 +25,7 @@ const read = (p) => readFileSync(join(repoRoot, p), 'utf8');
 
 const PROFILE = 'profile/README.md';
 const BRAND_DIR = 'brand';
-const REQUIRED_BRAND_FILES = ['logo.svg', 'logo-dark.svg', 'icon.svg', 'README.md'];
+const REQUIRED_BRAND_FILES = ['logo.svg', 'logo-dark.svg', 'logo-mono.svg', 'icon.svg', 'README.md'];
 
 // --- helpers -----------------------------------------------------------------------
 

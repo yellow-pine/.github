@@ -15,6 +15,7 @@ legible at 16 px, so there is no separate favicon variant to maintain.
 | [`logo-dark.svg`](logo-dark.svg) | Same lockup, `#FCFCFC` wordmark | Dark backgrounds |
 | [`icon.svg`](icon.svg) | The mark on a rounded `#202020` tile | Avatars, app icons, favicons — every size |
 | [`mark.svg`](mark.svg) | The bare `#FFD100` mark on transparency | Surfaces that bring their own background |
+| [`logo-mono.svg`](logo-mono.svg) | Ink-only lockup (one color) | Grayscale, fax-grade print, single-ink jobs |
 
 ## Palette
 
@@ -25,6 +26,7 @@ not additional colors.
 | Group | Token | Hex | Classic name |
 |---|---|---|---|
 | Identity | the mark, badges, selection wash | `#FFD100` | Cyber Yellow |
+| Identity | brand-hue TEXT on light (derived dark step, AA 5.3:1) | `#7E6604` | — ("brass") |
 | Neutral | ink / dark tile | `#202020` | Eerie Black |
 | Neutral | paper | `#FCFCFC` | Baby Powder |
 | Neutral | elevated dark surface | `#333533` | Jet |
@@ -63,6 +65,15 @@ from those verdicts:
 - Info states default to the azure family; a product may substitute neutral where blue
   must stay exclusively interactive (Latch).
 
+## Print
+
+- Grayscale kills the yellow (it grays to ~85%, near-white) — anything that must survive
+  one-color reproduction uses [`logo-mono.svg`](logo-mono.svg); the yellow is a spot fill
+  behind drawn ink (Pantone 109 C family), never the sole carrier of the mark.
+- No full-dark flood pieces in print (ink coverage); the dark surface is screen-only.
+- Brand-hue text on light media (print bylines) uses brass `#7E6604` — the only AA-legal
+  darkened step of the identity hue.
+
 ## Type
 
 The brand face is **Rubik 700** — chosen (2026-08) by a three-lens panel over fourteen
@@ -93,6 +104,15 @@ project `e1932f3e-7810-4729-a638-09fecad7d7ab`) — change the identity here fir
 rebuild and refresh the mirrors. The boards, design-system cards, and the pipeline that
 generates them from these masters live in [`design/`](design/) (see its README for the
 refresh loop and the Figma decision).
+
+The system was also **derived menu-free** from brand premises alone (2026-08-23): a
+blind derivation agent, given only the name, register, portfolio, media (web + paper),
+and the skills, reconstructed the same architecture — yellow as surface-only identity,
+a status-neutral near-black (pine-green dark is forbidden by pass/fail semantics),
+blue-family interactive by elimination, and Rubik from a derived admissible set — the
+fourth independent convergence. Its two novel findings (the ink-only lockup and the brass
+token) are shipped above; its taste-flagged alternates (complement-blue `#404EB3` links,
+warm-tinted neutrals) are legal variants, documented here, not adopted.
 
 v2 (2026-08): mark redesigned in-house — a two-tier pine synthesizing the original
 Brandmark mark's rounded geometry and tilt with an unmistakable pine silhouette. v2.1

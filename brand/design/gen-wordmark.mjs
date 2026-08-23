@@ -63,6 +63,16 @@ const lockup = (fill, file) => writeFileSync(join(BRAND, file),
 lockup('#202020', 'logo.svg');
 lockup('#FCFCFC', 'logo-dark.svg');
 
+// Ink-only master: grayscale print kills the yellow (it grays to ~85% near-white),
+// so a one-color lockup must exist — mark and wordmark both in ink.
+writeFileSync(join(BRAND, 'logo-mono.svg'),
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 400" role="img" aria-label="Yellow Pine">
+  <title>Yellow Pine</title>
+  <g transform="translate(${markX.toFixed(1)},${markY.toFixed(1)}) scale(${markScale.toFixed(4)})">${markPaths.replaceAll('#FFD100', '#202020')}</g>
+  <path fill="#202020" fill-rule="nonzero" d="${yellow.d}${pine.d}"/>
+</svg>
+`);
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   console.log(JSON.stringify({ width: +width, tracking: +tracking.toFixed(1), markX: +markX.toFixed(1) }));
 }
