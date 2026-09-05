@@ -3,33 +3,21 @@
   <img src="../brand/logo.svg" alt="Yellow Pine" width="400">
 </picture>
 
-**Thoughtful tools, built with care.**
+A small product studio.
 
-Yellow Pine is a small product studio: a tiny human team and a fleet of AI agents, building
-focused software — products that respect your attention, and developer tools that respect
-your terminal.
+Yellow Pine is a small team working alongside AI agents, building focused software. Two hosted
+products so far, plus the developer tools we needed ourselves and released.
 
-## 🌲 Products
+- **[Latch](https://latch.fyi)**: scores a public GitHub repository two ways, for AI coding
+  agents and for human newcomers. Six category scores, a one-line verdict on each, and a
+  prioritized list of fixes with the score impact of each one.
+- **[kishi](https://kishi.fyi)**: turns a short onboarding into a personalized, sixteen-section
+  dating-readiness kit, on the web and as a printable PDF. English, German and Turkish.
+- **[bly](https://github.com/yellow-pine/bly)**: a career agent that runs a job search out of
+  your own inbox, on your own machine. Free, open source, local-first.
+- **[zsh-github-dark](https://github.com/yellow-pine/zsh-github-dark)**: a minimalist zsh and
+  macOS Terminal setup with GitHub Dark colors, a git-aware prompt, and a one-line installer.
 
-- **[Latch](https://latch.fyi)** — Grip-test your repo for AI coding agents. A readiness
-  readout on any public GitHub repo: a score per signal, plus the fixes that raise it.
-- **[kishi](https://kishi.fyi)** — A warm, research-backed dating-readiness kit, made from
-  you — your colors, your city, your people: real store links, ten looks, a photo plan.
-- **[Bly](https://bly.fyi)** — A career agent that runs your job search from your own
-  inbox, on your own Claude subscription.
+Get in touch: open an issue in the relevant repository, or write to hello@yellowpine.com.
 
-## 🛠️ Open source
-
-- **[zsh-github-dark](https://github.com/yellow-pine/zsh-github-dark)** — A minimalist zsh
-  and macOS Terminal setup with GitHub Dark colors, a git-aware prompt, and a one-line
-  installer.
-
-## 📫 Get in touch
-
-Feedback, ideas, and contributions are welcome — open an issue or discussion in the
-relevant repository, or write to **hello@yellowpine.com**.
-
----
-
-<img src="../brand/mark.svg" alt="" width="22" align="left"> Built with 💛 by
-[Yellow Pine](https://github.com/yellow-pine) · yellowpine.com points here.
+[yellowpine.com](https://yellowpine.com)
