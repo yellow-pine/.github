@@ -11,10 +11,11 @@ products so far, plus the developer tools we needed ourselves and released.
 - **[Latch](https://latch.fyi)**: scores a public GitHub repository two ways, for AI coding
   agents and for human newcomers. Six category scores, a one-line verdict on each, and a
   prioritized list of fixes with the score impact of each one.
-- **[kishi](https://kishi.fyi)**: turns a short onboarding into a personalized, sixteen-section
-  dating-readiness kit, on the web and as a printable PDF. English, German and Turkish.
-- **[bly](https://github.com/yellow-pine/bly)**: a career agent that runs a job search out of
-  your own inbox, on your own machine. Free, open source, local-first.
+- **[kishi](https://kishi.fyi)**: turns an honest look at seven parts of a life into a staged
+  plan you can actually follow. Every step is sourced, and check-ins keep it true as your life
+  changes.
+- **[bly](https://bly.fyi)**: a career agent that runs a job search out of your own inbox, on
+  your own machine. Free, open source, local-first.
 - **[zsh-github-dark](https://github.com/yellow-pine/zsh-github-dark)**: a minimalist zsh and
   macOS Terminal setup with GitHub Dark colors, a git-aware prompt, and a one-line installer.
 
