@@ -1,13 +1,13 @@
-// Invariants for the Yellow Pine org homepage (profile/README.md) and the brand library.
+// Invariants for the Yellow Pine org profile (profile/README.md) and the brand library.
 //
-// yellowpine.com redirects to github.com/yellow-pine, so profile/README.md IS the company
-// homepage — these tests are the gate that keeps it publishable:
+// The company homepage is yellowpine.com. profile/README.md is what every visitor to
+// github.com/yellow-pine lands on — these tests are the gate that keeps it publishable:
 //
 //   1. Every relative asset a README references must exist in the repo.
 //   2. Every github.com/yellow-pine/* link must be reachable WITHOUT auth — the publish
 //      rule expressed without naming any repo: a link to a private repo 404s for the
 //      anonymous public and fails here.
-//   3. Every external product link must be live (a dead product link on the homepage is
+//   3. Every external product link must be live (a dead product link on the profile is
 //      worse than no link).
 //   4. brand/ must hold real vector SVGs (light + dark logo, icon) — no raster embeds.
 //
@@ -84,7 +84,7 @@ const skipNetwork = process.env.SKIP_NETWORK === '1';
 
 test('profile/README.md exists and is substantial', () => {
   assert.ok(existsSync(join(repoRoot, PROFILE)), 'profile/README.md missing');
-  assert.ok(read(PROFILE).length > 500, 'profile/README.md is too thin to be the homepage');
+  assert.ok(read(PROFILE).length > 500, 'profile/README.md is too thin to be the org profile');
 });
 
 test('every local asset referenced by a README exists', () => {
@@ -119,11 +119,11 @@ test('brand SVGs are real vectors', () => {
   }
 });
 
-// --- the homepage's links must hold up for the anonymous public --------------------
+// --- the profile's links must hold up for the anonymous public ---------------------
 
 test('every yellow-pine GitHub link is publicly reachable without auth', { skip: skipNetwork }, async () => {
   const orgLinks = externalLinks().filter((u) => u.startsWith('https://github.com/yellow-pine'));
-  assert.ok(orgLinks.length >= 1, 'homepage should link at least one yellow-pine repo');
+  assert.ok(orgLinks.length >= 1, 'the profile should link at least one yellow-pine repo');
   for (const url of orgLinks) {
     const status = await fetchStatus(url);
     assert.equal(status, 200, `${url} is not publicly visible without auth (HTTP ${status})`);
