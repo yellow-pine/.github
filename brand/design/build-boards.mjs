@@ -304,7 +304,7 @@ ${FOOT}`);
     <h2>Terminal</h2>
     <div style="background: #202020; border-radius: 14px; padding: 24px 26px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; line-height: 1.9">
       <div><span style="color: #FFD100">➜</span> <span style="color: #3C91E6">~/code</span> <span style="color: #FCFCFC">gh repo view yellow-pine/.github</span></div>
-      <div style="color: #9a9a98">The Yellow Pine homepage — org profile, public brand library, and org-wide config.</div>
+      <div style="color: #9a9a98">The Yellow Pine org profile, public brand library, and org-wide config.</div>
       <div><span style="color: #FFD100">➜</span> <span style="color: #3C91E6">~/code</span> <span style="color: #FCFCFC">git push</span> <span style="color: #9a9a98"># built with 💛 by a tiny human team and a fleet of agents</span></div>
     </div>
   </div>
