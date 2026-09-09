@@ -1,23 +1,24 @@
-# .github — the Yellow Pine homepage
+# .github — the Yellow Pine org profile
 
-Organization-wide GitHub configuration for **Yellow Pine**. Because yellowpine.com
-redirects to [github.com/yellow-pine](https://github.com/yellow-pine), the org profile
-rendered from this repository **is** the company homepage.
+Organization-wide GitHub configuration for **Yellow Pine**. The company homepage is
+[yellowpine.com](https://yellowpine.com). The org profile rendered from this repository is
+what every visitor to [github.com/yellow-pine](https://github.com/yellow-pine) lands on, so
+it is held to the same standard — but it is no longer the homepage itself.
 
 ## Contents
 
-- [`profile/README.md`](profile/README.md) — the public org profile / homepage.
+- [`profile/README.md`](profile/README.md) — the public org profile.
 - [`brand/`](brand/) — the canonical public brand library: hand-cleaned SVG masters
   (logo, dark variant, tile icon, bare mark), palette, and usage rules. The full Brandmark
   export archive and raster generators live in the private `yellow-pine/brand-assets` repo.
-- [`tests/`](tests/) — homepage invariants, run by [CI](.github/workflows/ci.yml) on every
+- [`tests/`](tests/) — profile invariants, run by [CI](.github/workflows/ci.yml) on every
   push and weekly: every referenced asset exists, brand SVGs are real vectors, every
   linked repo is publicly visible **without auth** (nothing private can leak onto the
-  homepage), and every product link is live.
+  profile), and every product link is live.
 
 ## The publish rule
 
-A project appears on the homepage only if it is a public repo, or a private repo with a
+A project appears on the profile only if it is a public repo, or a private repo with a
 live public website. The tests enforce the mechanical half of this: they fetch every
 `github.com/yellow-pine/*` link anonymously and fail on anything not public.
 

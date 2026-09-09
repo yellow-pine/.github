@@ -1,6 +1,7 @@
 name: ci
 
-# The org profile README is the company homepage (yellowpine.com redirects here), so its
+# The org profile README is the org's front page on GitHub — the company homepage itself
+# is yellowpine.com — so its
 # invariants are tested: assets resolve, brand SVGs are real vectors, and — because the
 # tests fetch without credentials — every linked repo is publicly visible and every
 # product link is live. The weekly cron catches links that die between pushes.
