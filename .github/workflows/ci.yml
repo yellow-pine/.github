@@ -1,10 +1,10 @@
 name: ci
 
-# The org profile README is the org's front page on GitHub — the company homepage itself
-# is yellowpine.com — so its
-# invariants are tested: assets resolve, brand SVGs are real vectors, and — because the
-# tests fetch without credentials — every linked repo is publicly visible and every
-# product link is live. The weekly cron catches links that die between pushes.
+# The org profile README is the org's front page on GitHub (the company homepage itself is
+# yellowpine.com, built from yellow-pine/yellow-pine.github.io, not from here). The README's
+# invariants are what this workflow tests: assets resolve, brand SVGs are real vectors, and —
+# because the tests fetch without credentials — every linked repo is publicly visible and
+# every product link is live. The weekly cron catches links that die between pushes.
 on:
   push:
     branches: [main]

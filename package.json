@@ -1,7 +1,7 @@
 {
   "name": "@yellow-pine/dot-github",
   "private": true,
-  "description": "Org-wide GitHub configuration + the public Yellow Pine profile (the company homepage).",
+  "description": "Org-wide GitHub configuration + the public Yellow Pine profile and brand library.",
   "type": "module",
   "scripts": {
     "test": "node --test tests/profile.test.mjs tests/design.test.mjs",

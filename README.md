@@ -3,7 +3,8 @@
 Organization-wide GitHub configuration for **Yellow Pine**. The company homepage is
 [yellowpine.com](https://yellowpine.com). The org profile rendered from this repository is
 what every visitor to [github.com/yellow-pine](https://github.com/yellow-pine) lands on, so
-it is held to the same standard — but it is no longer the homepage itself.
+it is held to the publish rule below and to the invariants in [`tests/`](tests/) — but it is
+not the homepage itself.
 
 ## Contents
 
@@ -18,9 +19,12 @@ it is held to the same standard — but it is no longer the homepage itself.
 
 ## The publish rule
 
-A project appears on the profile only if it is a public repo, or a private repo with a
-live public website. The tests enforce the mechanical half of this: they fetch every
-`github.com/yellow-pine/*` link anonymously and fail on anything not public.
+A project is publishable — on the profile, on yellowpine.com, anywhere Yellow Pine speaks
+publicly — only if it is a public repo, or a private repo with a live public website. The
+rule is company-wide; what is scoped is the enforcement. The tests here cover the mechanical
+half **for the profile**: they fetch every `github.com/yellow-pine/*` link anonymously and
+fail on anything not public. The website repo inherits the rule and enforces it the same way
+against its own page.
 
 ```sh
 npm test              # run the invariants locally
