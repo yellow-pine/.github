@@ -11,8 +11,8 @@ Whatever direction wins here gets productionized in the repo pipeline
   unless a direction demands otherwise).
 - **Who:** a tiny human team + a fleet of AI agents, openly AI-built. Register:
   "Thoughtful tools, built with care" — calm, warm-competent, craft.
-- **Products:** Latch (dev tool, pass/fail scoring UI), Bly (career agent in your inbox),
-  kishi (consumer dating kit). One umbrella brand over all three. Product UIs keep their
+- **Products:** Latch (dev tool, pass/fail scoring UI), Bly (career agent in your inbox).
+  One umbrella brand over both. (kishi, a consumer kit, was wound down 2026-09-11.) Product UIs keep their
   own interior face (JetBrains Mono).
 - **Media:** web (light + dark first-class, WCAG AA) and paper (grayscale survival, ink
   coverage limits, 12pt body floor).

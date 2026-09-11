@@ -5,15 +5,12 @@
 
 A small product studio.
 
-Yellow Pine is a small team working alongside AI agents, building focused software. Two hosted
-products so far, plus the developer tools we needed ourselves and released.
+Yellow Pine is a small team working alongside AI agents, building focused software. One hosted
+product and one local-first app so far, plus the developer tools we needed ourselves and released.
 
 - **[Latch](https://latch.fyi)**: scores a public GitHub repository two ways, for AI coding
   agents and for human newcomers. Six category scores, a one-line verdict on each, and a
   prioritized list of fixes with the score impact of each one.
-- **[kishi](https://kishi.fyi)**: turns an honest look at seven parts of a life into a staged
-  plan you can actually follow. Every step is sourced, and check-ins keep it true as your life
-  changes.
 - **[bly](https://bly.fyi)**: a career agent that runs a job search out of your own inbox, on
   your own machine. Free, open source, local-first.
 - **[zsh-github-dark](https://github.com/yellow-pine/zsh-github-dark)**: a minimalist zsh and

@@ -195,7 +195,7 @@ ${FOOT}`);
   ${eyebrow('Foundations · type & color pass · August 2026')}
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>The face</h2>
-    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The brand face is <strong>Rubik 700</strong> — chosen by a three-lens panel (personality, mark harmony, production) over fourteen candidate faces and the incumbent: its rounded stems and terminals share the pine&#39;s corner language, warm enough for kishi, credible enough for Latch, a living 300–900 variable family for headings. The wordmark is set in Rubik 700 at +0.02em tracking and shipped as outlines (no font dependency); the generator and vendored OFL font live in brand/design/. Product UIs keep their own voices (kishi and Latch run JetBrains Mono as UI identity — deliberately divergent from the umbrella brand).</p>
+    <p style="font-size: 13px; line-height: 1.55; margin: 0; max-width: 66ch; text-wrap: pretty">The brand face is <strong>Rubik 700</strong> — chosen by a three-lens panel (personality, mark harmony, production) over fourteen candidate faces and the incumbent: its rounded stems and terminals share the pine&#39;s corner language, warm enough for consumer work, credible enough for Latch, a living 300–900 variable family for headings. The wordmark is set in Rubik 700 at +0.02em tracking and shipped as outlines (no font dependency); the generator and vendored OFL font live in brand/design/. Product UIs keep their own voices (Latch runs JetBrains Mono as UI identity — deliberately divergent from the umbrella brand).</p>
     <div style="font-family: Rubik, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 0.02em">AaBbCcDdEe 0123456789</div>
     <div style="display: flex; flex-direction: column; gap: 10px; background: #ffffff; border: 1px solid rgba(32,32,32,0.08); border-radius: 14px; padding: 22px">
       <div style="font-size: 11px; color: #6a6a68; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600">Proof — outlines vs the live face</div>
@@ -295,8 +295,7 @@ ${FOOT}`);
   <div style="display: flex; flex-direction: column; gap: 14px">
     <h2>Browser tabs</h2>
     <div style="background: #202124; border-radius: 14px 14px 0 0; padding: 10px 12px 0; display: flex; gap: 4px">
-      ${tab('kishi — show up as the most you', true)}
-      ${tab('Latch — grip-test your repo')}
+      ${tab('Latch — grip-test your repo', true)}
       ${tab('Bly — your career agent')}
     </div>
   </div>
