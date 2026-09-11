@@ -81,12 +81,12 @@ from those verdicts:
 
 The brand face is **Rubik 700** — chosen (2026-08) by a three-lens panel over fourteen
 candidate faces and the incumbent: its rounded stems and terminals share the pine's corner
-language, warm enough for kishi, credible enough for Latch, and a living 300–900 variable
+language, warm enough for consumer work, credible enough for Latch, and a living 300–900 variable
 family for headings. The wordmark is set in Rubik 700 at +0.02em tracking (near-neutral, per the blind selection verdict) and shipped as
 outlines (no font dependency); regenerate it with
 [`design/gen-wordmark.mjs`](design/gen-wordmark.mjs) (vendored OFL font in
 `design/fonts/`). Use Rubik for headings in brand materials; body copy stays system.
-Product UIs keep their own voices (kishi and Latch run JetBrains Mono as UI identity —
+Product UIs keep their own voices (Latch runs JetBrains Mono as UI identity —
 deliberately divergent from the umbrella brand).
 
 ## Usage
